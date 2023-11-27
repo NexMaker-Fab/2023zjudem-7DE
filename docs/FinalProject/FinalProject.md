@@ -1,5 +1,96 @@
- ### Final project's Draft 
- <br>
+### Final project's Draft 
+
+ <h1 align="center">A SMART MULTIFUTIONARY DUSTBIN FOR LDC</h1>
+ <h2>Background Information</h2>
+ A lot of public places in least developed areas mostly rural areas still use open bins or bins with foot pedal for clinical waste, as a result sometimes when the petal malfunctions, the waste is not disposed off well leading to poor hygiene. At times the design of the bins permits it to overfill or overflow resulting on some waste ending up on the floor.
+The dustbin can also be used in other places such as kitchen, living room, bathroom, bedroom, etc. 
+<br>
+<br>
+ <h2>Existing Products</h2>
+
+<div style="display: flex; flex-direction: row;">
+    <div style="flex: 1; padding: 10px;">
+         <img src="img/final_project_draft/dustbin_pic1.png">
+    </div>
+    <div style="flex: 4; padding: 10px;">
+        <h3>High Quality Kitchen Bathroom Smart Sensor Trash Can Automatic Sanitary Lady Bin. (Made-in-China.com )</h3>
+</div>
+</div> 
+
+<div style="display: flex; flex-direction: row;">
+    <div style="flex: 1; padding: 10px;">
+         <img src="img/final_project_draft/dustbin_pic2.png">
+    </div>
+    <div style="flex: 4; padding: 10px;">
+        <h3>Bathroom Touchless Trash Can - Anborry 2.2 Gallon Smart Automatic Motion Sensor Rubbish Can with Lid Electric Waterproof Narrow Small Garbage Bin for Kitchen, Office, Living Room, Toilet, Bedroom, RV. (amazon.ca)</h3>
+</div>
+</div> 
+
+<div style="display: flex; flex-direction: row;">
+    <div style="flex: 1; padding: 10px;">
+         <img src="img/final_project_draft/dustbin_pic3.png">
+    </div>
+    <div style="flex: 4; padding: 10px;">
+        <h3>Pyle Smart Garbage Bin - Digital Trash Can with Built-in Dirt Vacuum and Motion Sensor Lid (5L)</h3>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: row;">
+    <div style="flex: 1; padding: 10px;">
+         <img src="img/final_project_draft/dustbin_pic4.png">
+    </div>
+    <div style="flex: 4; padding: 10px;">
+        <h3>Modern Solar Smart Bin Gen Model</h3>
+</div>
+</div>
+
+<h2>Product Idea</h2>
+To design a smart dustbin that senses motion and opens, and its also able to sense the amount of waste inside it, when the waste exceed a certain point it put on the red light and refuses to open even when it senses motion. A vacuum will be added to clean the area where the dustbin will be used.
+The plan is to cover the SDG 3& 6 for sanitation along with good health and well being. This is because its through proper sanitation that the health of people cannot be compromised.
+
+<style>
+  .image-container{
+    text-align: center;
+  }
+
+  .image-container img{
+    display: inline-block;
+    margin: 10px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+
+
+<div class="image container">
+  <img src="img/final_project_draft/dustbin_pic5.png">
+  <img src="img/final_project_draft/dustbin_pic6.png">
+</div>
+
+<h2>Product Idea Sketch</h2>
+<br>
+<br>
+<div class="image container">
+    <img src="img/final_project_draft/dustbin_pic7.png">
+</div>
+
+<h2>Areas of Innovation -</h2>
+* Use of cheap materials- reduction of costs.<br>
+* Use sustainable energy-easily accessible.<br>
+* Multi functionality of product.<br>
+
+<h2>Components we might need -</h2>
+- Arduino UNO <br>
+- Grove- ultrasonic distance sensor <br> 
+- Grove -servo motor<br>
+- Solar power<br>
+- LED lights <br>
+- Gear motor with wheels <br>
+- Battery <br>
+- Glue gun <br>
+- Insulation tape <br>
+
+ <!--<br>
  <h1 align="center">SMART BODY TEMPERATURE BABY BRACELET</h1>
  The smart body temperature baby bracelet is a device that contains a smart thermometer which 
 is wearable and continuously monitors the temperature of a baby, alarming the parent or 
@@ -119,4 +210,4 @@ the existing smart watches available.
 - Think of rural areas with less technology.
 - Make the manufacture cost effective.
 - Lullaby music for the baby's relaxation.
-
+-->
