@@ -146,21 +146,77 @@ To install click <a href="https://www.autodesk.com/products/fusion-360/overview?
  <img src="img/360/super_gear.png">
 
 - Animation video(screen record)
+Animation can be show from the motion study.To show animation from motion study step's below shall be follow -
+<br>
+Step 1 - Open Motion study window from Assembly.
+<br>
+<br>
+<img src="video/video_cad/cad_animation/cad_animation_1.png">
+<br>
+<br>
+Step 2 - After open the motion study window, select the specific joint from where the animation will start (it depends on the design) , define the angle and mode and speed. (angle, mode and speed can be change, it depends on how you want to show the animation)
+<br>
+<br>
+<img src="video/video_cad/cad_animation/cad_animation_2.png">
+
+<br>
+<br>
+
+Step 3 - Click the play button from motion study window to play the animation.
+<br>
+<br>
 <div id="video-container">
         <video controls>
-            <source src="video/video_cad/badhon_cad.mp4" type="video/mp4">
+            <source src="video/video_cad/cad_animation/cad_animation_3.mp4" type="video/mp4">
         </video>
     </div>
 
 <iframe src="https://myhub.autodesk360.com/ue28cacf9/shares/public/SH512d4QTec90decfa6ef43e4a418112848d?mode=embed" width="800" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 
 ### Parameter design practice
-
+Parameter modeling is an approach to 3D CAD where you can reach the design intent is by altering features and constraints. This allows designers to automate repetitive changes. Parametric modeling allows for creating mathematical relationships (modeling features) between sketches and the final model. These are stacked on each other over time and thus become intertwined. In other words, modifying the parameters of one feature will affect other features.
+<br>
+<br>
+On the other hand, direct modeling is the process of defining geometry quickly without spending time tweaking features, constraints, and original design intent. Designers using direct modeling can remove and/or add geometrical details from/to solid models without updating sketches or relationships. You can also import and edit models designed with parametric modeling software within direct modeling.
+<br>
+<br>
+Here we tried to parameter design practice in our design.
+<br>
+<br>
+For parameters design practice open the parameters window from Modify - 
+<br>
+<br>
+<img src="img/parameter/parameter_1.png">
+<br>
+<br>
+Now select the specific component of your model for which one you want the parameter.He we change the arm and base's parameters in our design to practice (Any component could be change by the logic of the model). picture shows the difference with original parameter and changed parameter.
+<br>
+<br>
+<h2>Arm with original parameter</h2>
+<br>
+<img src="img/parameter/parameter_2.1.png">
+<br>
+<br>
+<h2>Arm after change parameter</h2>
+<img src="img/parameter/parameter_2.2.png">
+<br>
+<br>
+<h2>Base thickness with original parameter</h2>
+<br>
+<img src="img/parameter/parameter_3.1.png">
+<br>
+<br>
+<h2>Base thickness after change parameter</h2>
+<img src="img/parameter/parameter_3.2.png">
+<br>
+<br>
+And after change parameters the model works perfectly as before.
 <div id="video-container">
         <video controls>
-            <source src="video/video_cad/parameter.mp4" type="video/mp4">
+            <source src="img/parameter/parameter_changed_motion.mp4" type="video/mp4">
         </video>
     </div>
+
 
 
 
