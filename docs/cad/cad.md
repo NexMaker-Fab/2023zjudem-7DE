@@ -119,7 +119,7 @@ To install click <a href="https://www.autodesk.com/products/fusion-360/overview?
 8. Make an assembly.
 <img src="img/360/36018.png">
 <img src="img/360/36019.png">
-<img src="img/360/36020.png">
+<img src="img/360/36020>36020_1.png">
 <img src="img/360/36021.png">
 <img src="img/360/36022.png">
 
