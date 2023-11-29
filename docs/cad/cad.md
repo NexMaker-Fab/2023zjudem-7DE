@@ -217,6 +217,59 @@ And after change parameters the model works perfectly as before.
         </video>
     </div>
 
+### Automated Modeling
+Automated quickly generates design alternatives for connecting existing geometries in your design. Adding one of the alternatives to your design, creates a parametric, solid body that is editable using the Timeline.
+
+Using Automated Modeling speeds up the modeling process by suggesting different geometrical shapes that you can use to complete your design, or that you can use as inspiration for a final design.
+<br>
+<br>
+Process of automated modeling -
+<br>
+<br>
+Step 1 - Click on Automated Modeling.
+<br>
+<br>
+<img src="img/automated_model/automodel_1.png">
+<br>
+<br>
+Step 2 - Now select all input. (Select at least two faces to
+connect. Optionally, you can select areas
+Where vou donut wanna creste new
+geometry. The alternatives are generated
+automaticallv. Explore them and select the
+alternative that best suits our needs.)
+<br>
+<br>
+<img src="img/automated_model/automated_2.png">
+<br>
+<br>
+Now all the alternative model are under construction.
+<br>
+<br>
+<img src="img/automated_model/automated_3.png">
+<br>
+<br>
+Step 3 - Now select one altenative which one you like and click ok.
+<br>
+<br>
+<img src="img/automated_model/automated_4.png">
+<br>
+<br>
+Here is the new automated model -
+<br>
+<br>
+<img src="img/automated_model/automated_6.png">
+<br>
+<br>
+It is also working perfect -
+<br>
+<br>
+
+<div id="video-container">
+        <video controls>
+            <source src="img/automated_model/automated_5.mp4" type="video/mp4">
+        </video>
+    </div>
 
 
 
