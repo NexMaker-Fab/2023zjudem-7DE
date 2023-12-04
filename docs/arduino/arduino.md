@@ -142,6 +142,7 @@ After dispensing, the system waits for the next user or enters a standby mode to
 <br>
 
 <b>Arduino Code</b> -
+
 ~~~
 /Water dispenser
 #define trigger 5
@@ -181,8 +182,44 @@ void measure_distance()
   delayMicroseconds(2);
   time=pulsein(echo,HIGH);
   
-  distance=time*200/20000;
-  
+  distance=time*200/20000; 
 }
 ~~~
 
+<b>Workflow</b> - 
+
+Initialization:
+
+- The Arduino initializes the necessary pin modes and begins serial communication.
+The setup() function configures the pins for the ultrasonic sensor (trigger and echo) and the relay.
+
+* Distance Measurement Loop (loop() function):
+
+- The program continuously measures the distance using the measure_distance() function.
+
+- It checks whether an object is within the specified distance (less than 5 units in this case).
+
+Distance Measurement (measure_distance() function):
+
+- The ultrasonic sensor sends a short pulse.
+
+- It then measures the time taken for the pulse to bounce back (time it takes for the wave to return).
+
+- The time is converted into distance using the speed of sound formula: distance = time * speed_of_sound / 2.
+Note: Speed of sound is typically around 343 meters per second at room temperature.
+
+Control of the Water Dispenser:
+
+- If an object is detected within the specified range (less than 5 units), the relay turns off, assuming a cup or hand is present below the dispenser.
+- If no object is detected within this range, the relay remains on, keeping the dispenser ready for use.
+
+<b>Project Video</b> -
+<div id="video-container"> 
+    <video controls>
+            <source src="img/arduino/water_dispenser.mp4" type="video/mp4">
+        </video>
+</div>
+
+<b>Conclusion</b> -<br>
+To sum up, the water dispenser using Arduino provides a hands-free and efficient solution for water dispensing. By combining an Arduino UNO, ultrasonic sensor, and mini-DC pump, the system responds to user proximity, offering a practical and hygienic approach. With versatile power options and simple components, it showcases the potential of DIY electronics in creating user-friendly, contactless systems with diverse applications.
+<hr>
