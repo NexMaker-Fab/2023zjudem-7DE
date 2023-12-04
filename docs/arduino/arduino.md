@@ -3,8 +3,8 @@
 ### Basic
 To learn about arduino basic click <a href="https://www.nexmaker.com/doc/5arduino/arduino_basic.html">here</a>
 
-### Homework 
-<h2>LED control with switch</h2>
+### Class Practice
+<h2 align="center">LED control with switch</h2>
 Controlling two LEDs with a switch using an Arduino is a common beginner project that demonstrates input and output interfacing. Below is a step-by-step process to achieve this:
 
 Components Required:
@@ -83,4 +83,106 @@ Project video
         </video>
     </div>
 
-This project demonstrates the basic concept of digital input (reading the switch) and digital output (controlling the LEDs) using an Arduino..
+This project demonstrates the basic concept of digital input (reading the switch) and digital output (controlling the LEDs) using an Arduino.
+
+<hr>
+
+### Team Practice
+<h2 align="center">WATER DISPENSER USING ARDUINO</h2>
+
+<b>Project Overview</b> -<br> The Water Dispenser using Arduino is a smart and automated solution for dispensing water without physical contact. The system incorporates an Arduino UNO microcontroller, a single-channel relay module, an ultrasonic sensor, a mini-DC pump, pipes for water flow, jumper wires for connections, and power supply options such as 9v batteries, power bank, or a DC 9v power supply.
+<br>
+<br>
+<b>Key Components</b> -
+<br>
+<br>
+<b>Arduino UNO</b>: The brain of the system, responsible for processing data from the ultrasonic sensor and controlling the pump through the relay module.<br>
+
+<b>Single-channel Relay Module</b>: This module acts as a switch to control the mini-DC pump. The Arduino triggers the relay to turn the pump on or off.<br>
+
+<b>Ultrasonic Sensor</b>: Detects the presence of a user by sending and receiving ultrasonic waves. The Arduino calculates the distance based on the time taken for the waves to bounce back.<br>
+
+<b>Mini-DC Pump</b>: Dispenses water when activated by the relay module. It ensures a controlled and precise flow.<br>
+
+<b>Pipe</b>: Connects the water source to the pump and directs the water flow. It's a crucial component for the dispensing mechanism.<br>
+
+<b>Jumper Wires</b>: Used for making electrical connections between components, linking the Arduino, relay module, ultrasonic sensor, and pump.<br>
+
+<b>Power Supply Options</b>: The project can be powered using 9v batteries, a power bank, or a DC 9v power supply, providing flexibility and convenience.
+<br>
+
+<b>Working Principle</b> -<br>
+The ultrasonic sensor continuously monitors the surroundings.
+When a user approaches, the sensor detects the change in distance.
+The Arduino processes this information and triggers the relay module to activate the pump.
+The pump dispenses water through the connected pipe for a specified duration.
+After dispensing, the system waits for the next user or enters a standby mode to conserve power.
+<br>
+
+<b>Applications</b> -<br> This Arduino-based water dispenser finds applications in various settings, including offices, public places, or homes, providing a touch-free and efficient way to access water.
+<br>
+
+<b>Components Photo</b> -
+<br>
+<br>
+<img src="img/arduino/arduino_pic1.png">
+<br>
+<br>
+<b>SKETCH DIAGRAM</b> -
+<br>
+<br>
+<img src="img/arduino/arduino_pic2.png">
+<br>
+<br>
+<b>Connection of all component</b> -
+<br>
+<br>
+<img src="img/arduino/arduino_pic3.png">
+<br>
+<br>
+
+<b>Arduino Code</b> -
+~~~
+/Water dispenser
+#define trigger 5
+#define echo 4
+#define Relay 6
+float time=0,distance=0;
+void setup()
+{ 
+  Serial.begin(9600);
+  pinMode(trigger,OUTPUT);
+  pinMode(echo,INPUT);
+  pinMode(Relay,OUTPUT);
+  
+  delay(2000);
+}
+void loop()
+{
+ measure_distance();
+if(distance<5)
+ {
+  digitalWrite(Relay,LOW);
+ }
+ else
+ {
+  digitalWrite(Relay,HIGH);
+ }
+ 
+ delay(500);
+}
+void measure_distance()
+{
+  digitalWrite(trigger,LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigger,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger,LOW);
+  delayMicroseconds(2);
+  time=pulsein(echo,HIGH);
+  
+  distance=time*200/20000;
+  
+}
+~~~
+
