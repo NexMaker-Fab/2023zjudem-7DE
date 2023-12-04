@@ -217,7 +217,7 @@ And after change parameters the model works perfectly as before.
         </video>
     </div>
 
-### Automated Modeling
+### Automated Modeling Practice
 Automated quickly generates design alternatives for connecting existing geometries in your design. Adding one of the alternatives to your design, creates a parametric, solid body that is editable using the Timeline.
 
 Using Automated Modeling speeds up the modeling process by suggesting different geometrical shapes that you can use to complete your design, or that you can use as inspiration for a final design.
