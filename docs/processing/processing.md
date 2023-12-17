@@ -74,9 +74,8 @@ void draw() {
 > Video 
 <br>
 <br>
-<video align="centre" width="100%" height="100%" controls>
+<video align="centre" width="100%" height="100%" controls muted>
   <source src="img/processing/processingexample_video_1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 
  <br>
@@ -97,3 +96,99 @@ There are several tools and platforms similar to Processing that cater to creati
 - <a href="https://visualprogramming.net/">vvvv</a>: This graphical programming environment focuses on multimedia and interactive installations. It uses a visual programming language to create real-time content and interactive media.
 
 Each of these tools has its strengths and is suited to different purposes within the realm of creative coding, visual arts, and interactive media. They vary in terms of programming languages, ease of use, performance, and the specific types of projects they are best suited for. Exploring a few of these might help you find one that aligns best with your creative goals and coding preferences!
+
+### Interactive game with mouse
+
+- Game Elements:
+Ball (ellipse()): Represented as a small circle (ellipse) moving around the screen.
+Movable Bar (rect()): A vertical bar that follows the y-axis movement of the mouse.
+
+Gameplay:
+- Ball Movement: 
+*The ball starts from the center of the screen and moves at a random speed in both the x and y directions.<br>
+*It continuously updates its position (x and y variables) based on its speed (speedX and speedY variables).<br>
+*The ball bounces off the walls of the window and changes direction when it hits them.<br>
+
+- Movable Bar Interaction:
+
+*There is a vertical bar on the right side of the screen that follows the vertical movement of the mouse (mouseY).
+*When the ball collides with this vertical bar, it changes its horizontal direction (speedX) to simulate a bounce off the bar.
+
+- Game Rules:
+
+*If the ball hits the movable bar, its horizontal direction (speedX) gets inverted.<br>
+*If the ball hits the left or right walls, its horizontal direction gets inverted and its speed increases by 10% (speedX gets multiplied by -1.1 and speedY gets multiplied by 1.1).<br>
+*If the ball hits the top or bottom walls, its vertical direction (speedY) gets inverted.<br>
+
+- Reset:
+
+*Clicking the mouse resets the ball to the center of the screen and assigns it a new random speed and direction.<br>
+
+- Objective:
+The objective appears to be to keep the ball bouncing within the screen boundaries and try to control its movement by adjusting the position of the movable bar to prevent it from going out of bounds or missing the bar.<br>
+It's a simple game of controlling the bar's position to keep the ball in play for as long as possible!
+
+> Processing Code 
+~~~
+// Declare global variables for ball and bar positions and speeds
+float x, y, speedX, speedY;
+float diam = 10; // Diameter of the ball
+float rectSize = 200; // Size of the movable bar
+
+void setup() {
+  fullScreen(); // Sets the sketch to fullscreen
+  fill(0, 255, 0); // Fill color for the ball
+  reset(); // Calls the reset function to initialize positions and speeds
+}
+
+void reset() {
+  // Reset the ball position to the center of the screen
+  x = width/2;
+  y = height/2;
+  
+  // Assign random speeds in both x and y directions for the ball
+  speedX = random(3, 5);
+  speedY = random(3, 5);
+}
+
+void draw() { 
+  background(0); // Sets the background color to black
+  
+  // Draw the ball at its current position
+  ellipse(x, y, diam, diam);
+
+  // Draw the movable bar on the right side of the screen
+  rect(0, 0, 20, height); // Left wall
+  rect(width-30, mouseY-rectSize/2, 10, rectSize); // Movable bar
+  
+  // Update ball position by adding its speed to its current position
+  x += speedX;
+  y += speedY;
+
+  // if ball hits the movable bar, invert X direction
+  if (x > width-30 && x < width -20 && y > mouseY-rectSize/2 && y < mouseY+rectSize/2) {
+    speedX = speedX * -1; // Change horizontal direction
+  } 
+
+  // if ball hits left or right walls, change direction of X and increase speed
+  if (x < 25 || x > width - 25) {
+    speedX *= -1.1; // Invert X direction and increase speed
+    speedY *= 1.1; // Increase Y speed
+    x += speedX; // Move the ball
+  }
+
+  // if ball hits top or bottom walls, change direction of Y   
+  if (y > height || y < 0) {
+    speedY *= -1; // Invert Y direction
+  }
+}
+
+void mousePressed() {
+  reset(); // Reset the ball's position and speed when mouse is clicked
+}
+
+~~~
+> Output (screen recorded video)
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/processing/processingsimplegame_1.mp4" type="video/mp4">
+</video>
