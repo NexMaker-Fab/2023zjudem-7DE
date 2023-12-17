@@ -226,12 +226,16 @@ Using Automated Modeling speeds up the modeling process by suggesting different 
 Process of automated modeling -
 <br>
 <br>
+This is the model for which we will try automated modeling.
+<br>
+
 Step 1 - Click on Automated Modeling.
 <br>
+
+<img src=img/automated_model/automated_1.png>
 <br>
-<img src="img/automated_model/automodel_1.png">
 <br>
-<br>
+
 Step 2 - Now select all input. (Select at least two faces to
 connect. Optionally, you can select areas
 Where vou donut wanna creste new
@@ -243,22 +247,16 @@ alternative that best suits our needs.)
 <img src="img/automated_model/automated_2.png">
 <br>
 <br>
-Now all the alternative model are under construction.
+Now all the alternative model are under construction after construction selection one model which one you like.
 <br>
 <br>
 <img src="img/automated_model/automated_3.png">
 <br>
 <br>
-Step 3 - Now select one altenative which one you like and click ok.
-<br>
-<br>
-<img src="img/automated_model/automated_4.png">
-<br>
-<br>
 Here is the new automated model -
 <br>
 <br>
-<img src="img/automated_model/automated_6.png">
+<img src="img/automated_model/automated_4.png">
 <br>
 <br>
 It is also working perfect -
