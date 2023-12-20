@@ -87,7 +87,7 @@ This project demonstrates the basic concept of digital input (reading the switch
 
 <hr>
 
-### Team Practice
+### Water Dispenser
 <h2 align="center">WATER DISPENSER USING ARDUINO</h2>
 
 <b>Project Overview</b> -<br> The Water Dispenser using Arduino is a smart and automated solution for dispensing water without physical contact. The system incorporates an Arduino UNO microcontroller, a single-channel relay module, an ultrasonic sensor, a mini-DC pump, pipes for water flow, jumper wires for connections, and power supply options such as 9v batteries, power bank, or a DC 9v power supply.
@@ -222,4 +222,122 @@ Control of the Water Dispenser:
 
 <b>Conclusion</b> -<br>
 To sum up, the water dispenser using Arduino provides a hands-free and efficient solution for water dispensing. By combining an Arduino UNO, ultrasonic sensor, and mini-DC pump, the system responds to user proximity, offering a practical and hygienic approach. With versatile power options and simple components, it showcases the potential of DIY electronics in creating user-friendly, contactless systems with diverse applications.
+<hr>
+
+
+### IR Remote-Controlled LED Panel
+<h2 align="center">IR Remote-Controlled LED Panel</h2>
+
+<b>Project Overview</b> - The "IR Remote-Controlled LED Panel" project involves controlling LEDs using an IR remote. It's a simple demonstration of how IR signals can be used to trigger actions, in this case, turning LEDs on and off.
+<br>
+
+<b>Materials Needed</b>:
+- Arduino board (e.g., Arduino Uno)
+- IR Receiver module
+- IR Remote control
+- LEDs (4 or more)
+- Breadboard and jumper wires
+<br>
+<img src="img/arduino/remotecontrollight_element.jpeg">
+<br>
+<br>
+
+<b>Circuit Digram</b>
+<img src="img/arduino/remotecontrollight_diagram.png">
+<br>
+<br>
+<h2>Set Up</h2>
+<br>
+
+<b>Hardware Connection</b><br>
+
+- Connect the IR Receiver module to the Arduino board.
+- Connect LEDs to digital pins of the Arduino (LED1 to LED4 as mentioned in the code).
+<img src="img/arduino/remotecontrollight_connection.jpeg">
+<br>
+
+<b>Software Setup</b><br>
+
+- Install the IRremote library in the Arduino IDE (Tools > Manage Libraries).
+- Use the provided code as the basis for your Arduino sketch.
+<br>
+
+<b>Code</b><br>
+
+~~~
+#include <IRremote.h>
+
+const byte IR_RECEIVE_PIN = 2;
+
+#define LED1 8
+#define LED2 9
+#define LED3 10
+#define LED4 11
+
+void setup()
+{
+   Serial.begin(115200);
+   Serial.println("IR Receive test");
+   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
+
+   pinMode(LED1, OUTPUT);
+   pinMode(LED2, OUTPUT);
+   pinMode(LED3, OUTPUT);
+   pinMode(LED4, OUTPUT);
+}
+
+void loop()
+{
+   if (IrReceiver.decode())
+   {
+      String ir_code = String(IrReceiver.decodedIRData.command, HEX);
+      Serial.println(ir_code);
+
+      if(ir_code == "c")
+        digitalWrite(LED1, HIGH);
+      else if(ir_code == "18")
+        digitalWrite(LED1, LOW);
+      if(ir_code == "5e")
+        digitalWrite(LED2, HIGH);
+      else if(ir_code == "8")
+        digitalWrite(LED2, LOW);
+      if(ir_code == "1c")
+        digitalWrite(LED3, HIGH);
+      else if(ir_code == "5a")
+        digitalWrite(LED3, LOW);
+      if(ir_code == "42")
+        digitalWrite(LED4, HIGH);
+      else if(ir_code == "52")
+        digitalWrite(LED4, LOW);
+      
+      IrReceiver.resume();
+   }
+}
+~~~
+
+<b>Code Explanation</b><br>
+
+- The code initializes the IR Receiver and sets up LEDs as outputs.
+- It continuously checks for received IR signals using the IrReceiver.decode() function.
+- When an IR signal is received, it decodes the signal and checks for specific codes (for the remote we use, it's IR code - 1 >'c', 2 >'18', 3 >'5e', 4 >'8', 5 >'1c', 6 >'5a', 7 >'42', 8 >'52'). (Remember that different remote has different IR code.)
+- Based on the received code, it turns on or off specific LEDs connected to the Arduino.
+<br>
+
+<b>Testing</b><br>
+
+- Upload the code to your Arduino board.
+- Open the serial monitor (Tools > Serial Monitor) to see the decoded IR signal.
+- Use the IR remote control to send signals corresponding to the codes mentioned in the code.
+- Verify that pressing different buttons on the remote controls the LEDs as intended.
+<br>
+
+<b>Testing Video</b>
+<div id="video-container"> 
+    <video controls>
+            <source src="img/arduino/remotecontrollight_video.mp4" type="video/mp4">
+        </video>
+</div>
+<br>
+
+<b>Conclusion</b>- The "IR Remote-Controlled LED Panel" project demonstrates how to use an IR remote to control LEDs connected to an Arduino. It showcases the functionality of IR receivers and how they can be integrated into projects for remote control applications. With modifications, it can be expanded to control more devices or perform diverse actions based on different IR signals received.
 <hr>
