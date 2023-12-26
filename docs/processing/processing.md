@@ -192,3 +192,61 @@ void mousePressed() {
 <video align="centre" width="100%" height="100%" controls muted>
   <source src="img/processing/processingsimplegame_1.mp4" type="video/mp4">
 </video>
+
+### Processing with Arduino
+
+<h2 align="center">An Arduino Radar System with Real-time Processing<h2>
+
+<h3>Introduction </h3>:
+Processing for real-time analysis and visualization, this project merges hardware and software. Arduino manages sensor data and motor control, while Processing interprets this data, creating a dynamic visual interface. Experience the synergy between Arduino's hardware control and Processing's data visualization in crafting an interactive radar system.
+
+<h3>Components needed</h3> :
+*Arduino UNO<br>
+*SG90 Micro-servo motor<br>
+*Ultrasonic Sensor - HC-SR04 (Generic)<br>
+*Breadboard (generic)<br>
+*Jumper wires (generic)<br>
+<br>
+<img src="img/processing/component_for_radar.png">
+<br>
+
+<h3>Software </h3>: <br>
+<a href="https://www.arduino.cc/en/software">Arduino IDE</a> and <a href="https://processing.org/download/">Processing</a>
+<br>
+
+<h3>Steps</h3> :
+
+Circuit Setup:
+
+ - Connect the ultrasonic sensor to the Arduino board.<br>
+ - Connect the servo motor to the Arduino to enable rotation.<br>
+ - Power up the components and ensure they're properly connected.<br>
+ <br>
+
+ <img src="img/processing/radar_diagram.png">
+
+Arduino Programming:
+
+ - Code the Arduino to read data from the ultrasonic sensor.<br>
+ - Control the servo motor to enable it to sweep across a defined angle range, like a radar scanner.<br>
+ - Process the data received from the sensor.<br>
+ 
+
+Processing Programming:
+
+ - Create a visualization in Processing to represent the radar screen.<br>
+ - Establish communication between Arduino and Processing (serial communication) to receive data.<br>
+ - Use the received data to display objects or obstacles on the screen.<br>
+
+Integration:
+
+ - Upload the Arduino code onto the board.<br>
+ - Run the Processing sketch on the computer.<br>
+ - The ultrasonic sensor detects objects, the Arduino processes the data, the servo motor sweeps, and the Processing sketch visualizes the information.<br>
+
+Functionality:
+ - The ultrasonic sensor measures distances by sending and receiving sound waves.<br>
+ - The servo motor rotates the sensor, scanning an area.<br>
+ - Arduino processes the sensor data and communicates it to the computer.<br>
+ - Processing receives this data and creates a real-time visualization of detected objects on the screen.<br>
+
