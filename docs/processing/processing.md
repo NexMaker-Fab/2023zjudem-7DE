@@ -197,7 +197,7 @@ void mousePressed() {
 
 <h2 align="center">An Arduino Radar System with Real-time Processing<h2>
 
-<h3>Introduction </h3>:
+<h3>Introduction : </h3>
 Processing for real-time analysis and visualization, this project merges hardware and software. Arduino manages sensor data and motor control, while Processing interprets this data, creating a dynamic visual interface. Experience the synergy between Arduino's hardware control and Processing's data visualization in crafting an interactive radar system.
 
 <h3>Components needed</h3> :
@@ -225,24 +225,201 @@ Circuit Setup:
 
  <img src="img/processing/radar_diagram.png">
 
-Arduino Programming:
+Arduino Programming: (code and explanation (comments))
 
  - Code the Arduino to read data from the ultrasonic sensor.<br>
  - Control the servo motor to enable it to sweep across a defined angle range, like a radar scanner.<br>
  - Process the data received from the sensor.<br>
- 
 
-Processing Programming:
+    ~~~
+    #include <Servo.h> // Include the Servo library
+
+      const int trigPin = 10; // Pin connected to the trigger pin of the ultrasonic sensor
+      const int echoPin = 11; // Pin connected to the echo pin of the ultrasonic sensor
+      long duration; // Variable to hold the duration of sound wave travel
+      int distance; // Variable to hold the calculated distance
+      Servo myServo; // Create a servo object
+
+      void setup() {
+        pinMode(trigPin, OUTPUT); // Set trigPin as an output
+        pinMode(echoPin, INPUT); // Set echoPin as an input
+        Serial.begin(9600); // Initialize serial communication
+        myServo.attach(12); // Attach the servo to pin 12
+      }
+
+      void loop() {
+        // Sweep the servo from 15 to 165 degrees
+        for (int i = 15; i <= 165; i++) {
+          myServo.write(i); // Move the servo to position 'i'
+          delay(30); // Delay for servo movement
+          distance = calculateDistance(); // Calculate distance
+          Serial.print(i); // Print servo position
+          Serial.print(",");
+          Serial.print(distance); // Print measured distance
+          Serial.print(".");
+        }
+
+        // Sweep the servo from 165 to 15 degrees
+        for (int i = 165; i > 15; i--) {
+          myServo.write(i); // Move the servo to position 'i'
+          delay(30); // Delay for servo movement
+          distance = calculateDistance(); // Calculate distance
+          Serial.print(i); // Print servo position
+          Serial.print(",");
+          Serial.print(distance); // Print measured distance
+          Serial.print(".");
+        }
+      }
+
+      int calculateDistance() {
+        digitalWrite(trigPin, LOW); // Set the trigPin low
+        delayMicroseconds(2); // Delay to ensure stability
+
+        digitalWrite(trigPin, HIGH); // Send a 10 microsecond high pulse to trigger
+        delayMicroseconds(10);
+        digitalWrite(trigPin, LOW); // Set the trigger pin low after the pulse
+
+        duration = pulseIn(echoPin, HIGH); // Measure the duration of the echo pulse
+        distance = duration * 0.034 / 2; // Calculate distance based on the speed of sound
+        return distance; // Return the calculated distance
+      }
+
+    ~~~ 
+
+Processing Programming: (Code and explanation (comments))
 
  - Create a visualization in Processing to represent the radar screen.<br>
  - Establish communication between Arduino and Processing (serial communication) to receive data.<br>
  - Use the received data to display objects or obstacles on the screen.<br>
 
+    ~~~
+            // Importing necessary libraries
+        import processing.serial.*;  // Library for serial communication
+        import java.awt.event.KeyEvent; // Library for keyboard events
+        import java.io.IOException; // Library for handling input/output exceptions
+
+        // Declaring variables
+        Serial myPort; // Serial object for communication
+        String angle = ""; // String to store angle data
+        String distance = ""; // String to store distance data
+        String data = ""; // String to store incoming data
+        String noObject; // String indicating if an object is within range
+        float pixsDistance; // Calculated distance for visualization
+        int iAngle, iDistance; // Integers for angle and distance
+        int index1 = 0; // Index variable for string manipulation
+        int index2 = 0; // Another index variable for string manipulation
+        PFont orcFont; // Font object for text display
+
+        void setup() {
+          size(1200, 700); // Canvas size
+          smooth(); // Smoothing for better graphics
+          myPort = new Serial(this, "COM4", 9600); // Initialize serial communication on a specific port at a certain baud rate
+          myPort.bufferUntil('.'); // Set a buffer until a period '.' is received
+        }
+
+        void draw() {
+          // Background and styling
+          fill(98, 245, 31);
+          noStroke();
+          fill(0, 4);
+          rect(0, 0, width, height - height * 0.065);
+
+          // Radar visualization
+          fill(98, 245, 31);
+          drawRadar();
+          drawLine();
+          drawObject();
+          drawText();
+        }
+
+        void serialEvent(Serial myPort) {
+          // Read data from serial port until '.' is encountered
+          data = myPort.readStringUntil('.');
+          data = data.substring(0, data.length() - 1); // Remove the last character (which is '.')
+
+          // Extract angle and distance from received data
+          index1 = data.indexOf(",");
+          angle = data.substring(0, index1);
+          distance = data.substring(index1 + 1, data.length());
+
+          // Convert string data to integers for further use
+          iAngle = int(angle);
+          iDistance = int(distance);
+        }
+
+        void drawRadar() {
+          pushMatrix();
+          translate(width / 2, height - height * 0.074); // Move origin to the bottom center of the screen
+          noFill();
+          strokeWeight(2);
+          stroke(98, 245, 31);
+
+          // Draw arcs representing different ranges
+          arc(0, 0, (width - width * 0.0625), (width - width * 0.0625), PI, TWO_PI);
+          arc(0, 0, (width - width * 0.27), (width - width * 0.27), PI, TWO_PI);
+          arc(0, 0, (width - width * 0.479), (width - width * 0.479), PI, TWO_PI);
+          arc(0, 0, (width - width * 0.687), (width - width * 0.687), PI, TWO_PI);
+
+          // Draw lines indicating specific angles
+          line(-width / 2, 0, width / 2, 0);
+          // ... Lines for specific angles (30, 60, 90, 120, 150 degrees)
+          popMatrix();
+        }
+
+        void drawObject() {
+          pushMatrix();
+          translate(width / 2, height - height * 0.074);
+          strokeWeight(9);
+          stroke(255, 10, 10); // Red color for object visualization
+          pixsDistance = iDistance * ((height - height * 0.1666) * 0.025); // Calculate pixel distance 
+           based on received distance
+
+          // Draw the object line if within a certain range
+          if (iDistance < 40) {
+            line(pixsDistance * cos(radians(iAngle)), -pixsDistance * sin(radians(iAngle)), (width - width 
+             * 0.505) * cos(radians(iAngle)), -(width - width * 0.505) * sin(radians(iAngle)));
+          }
+          popMatrix();
+        }
+
+        void drawLine() {
+          pushMatrix();
+          strokeWeight(9);
+          stroke(30, 250, 60); // Green color for line indicating distance
+          translate(width / 2, height - height * 0.074);
+
+          // Draw line indicating the detected object's distance and angle
+          line(0, 0, (height - height * 0.12) * cos(radians(iAngle)), -(height - height * 0.12) * 
+           sin(radians(iAngle)));
+          popMatrix();
+        }
+
+        void drawText() {
+          // Display information text
+          pushMatrix();
+          if (iDistance > 40) {
+            noObject = "Out of Range";
+          } else {
+            noObject = "In Range";
+          }
+          
+          // Styling and positioning for text
+          fill(0, 0, 0);
+          noStroke();
+          rect(0, height - height * 0.0648, width, height);
+          fill(98, 245, 31);
+          textSize(25);
+          // ... Text displaying range markers, angle, distance, labels for specific angles, etc.
+          popMatrix();
+        }
+
+    ~~~
+
 Integration:
 
  - Upload the Arduino code onto the board.<br>
  - Run the Processing sketch on the computer.<br>
- - The ultrasonic sensor detects objects, the Arduino processes the data, the servo motor sweeps, and the Processing sketch visualizes the information.<br>
+
 
 Functionality:
  - The ultrasonic sensor measures distances by sending and receiving sound waves.<br>
@@ -250,3 +427,11 @@ Functionality:
  - Arduino processes the sensor data and communicates it to the computer.<br>
  - Processing receives this data and creates a real-time visualization of detected objects on the screen.<br>
 
+ <img src="img/processing/processingradar_connection.png">
+ <br>
+
+Project video :
+
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/processing/processing_radar_video.mp4" type="video/mp4">
+</video>
