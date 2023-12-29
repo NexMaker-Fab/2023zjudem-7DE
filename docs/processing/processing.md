@@ -97,196 +97,192 @@ There are several tools and platforms similar to Processing that cater to creati
 
 Each of these tools has its strengths and is suited to different purposes within the realm of creative coding, visual arts, and interactive media. They vary in terms of programming languages, ease of use, performance, and the specific types of projects they are best suited for. Exploring a few of these might help you find one that aligns best with your creative goals and coding preferences!
 
-### Interactive game with mouse
+### Interactive Circle Clicker
 
-- Game Elements:
-Ball (ellipse()): Represented as a small circle (ellipse) moving around the screen.
-Movable Bar (rect()): A vertical bar that follows the y-axis movement of the mouse.
+<h3>Introduction :</h3>
+Create an interactive sketch in Processing where users click on a moving circle within a canvas.
+<h3>Implementation :</h3>
 
-Gameplay:
-- Ball Movement: 
-*The ball starts from the center of the screen and moves at a random speed in both the x and y directions.<br>
-*It continuously updates its position (x and y variables) based on its speed (speedX and speedY variables).<br>
-*The ball bounces off the walls of the window and changes direction when it hits them.<br>
+- Canvas Size: 400x400 pixels
+- Circle Behavior:
+  - Random movement of a red circle within the canvas.
+  - Mouse interaction triggers a change in the circle's state when the mouse is within close proximity.
 
-- Movable Bar Interaction:
+<h3>User Interaction :</h3>
 
-*There is a vertical bar on the right side of the screen that follows the vertical movement of the mouse (mouseY).
-*When the ball collides with this vertical bar, it changes its horizontal direction (speedX) to simulate a bounce off the bar.
+- Users are prompted to click on the moving circle.
+- Upon successful click, a congratulatory message is displayed on the canvas.
 
-- Game Rules:
+<h3>Conclusion :</h3>
+The project demonstrates a basic interactive sketch using Processing. Users engage by clicking on a moving circle within the canvas, prompting a congratulatory message upon successful interaction.
 
-*If the ball hits the movable bar, its horizontal direction (speedX) gets inverted.<br>
-*If the ball hits the left or right walls, its horizontal direction gets inverted and its speed increases by 10% (speedX gets multiplied by -1.1 and speedY gets multiplied by 1.1).<br>
-*If the ball hits the top or bottom walls, its vertical direction (speedY) gets inverted.<br>
+> Code
 
-- Reset:
+    ~~~
+          float circleX, circleY;
+    boolean clickedCircle = false;
 
-*Clicking the mouse resets the ball to the center of the screen and assigns it a new random speed and direction.<br>
+    void setup() {
+      size(400, 400);
+      circleX = random(width);
+      circleY = random(height); 
+    }
 
-- Objective:
-The objective appears to be to keep the ball bouncing within the screen boundaries and try to control its movement by adjusting the position of the movable bar to prevent it from going out of bounds or missing the bar.<br>
-It's a simple game of controlling the bar's position to keep the ball in play for as long as possible!
+    void draw() {
+      background(220);
+      
+      if (!clickedCircle) {
+        fill(255, 0, 0);
+        ellipse(circleX, circleY, 50, 50); 
 
-> Processing Code 
-~~~
-// Declare global variables for ball and bar positions and speeds
-float x, y, speedX, speedY;
-float diam = 10; // Diameter of the ball
-float rectSize = 200; // Size of the movable bar
+        if (mousePressed && dist(mouseX, mouseY, circleX, circleY) < 25) {
+          clickedCircle = true;
+        }
+      } else {
+        textAlign(CENTER, CENTER);
+        textSize(20);
+        fill(0);
+        text("Congratulations!\nYou clicked the circle!", width / 2, height / 2);
+      }
+    }
+    ~~~
 
-void setup() {
-  fullScreen(); // Sets the sketch to fullscreen
-  fill(0, 255, 0); // Fill color for the ball
-  reset(); // Calls the reset function to initialize positions and speeds
-}
-
-void reset() {
-  // Reset the ball position to the center of the screen
-  x = width/2;
-  y = height/2;
-  
-  // Assign random speeds in both x and y directions for the ball
-  speedX = random(3, 5);
-  speedY = random(3, 5);
-}
-
-void draw() { 
-  background(0); // Sets the background color to black
-  
-  // Draw the ball at its current position
-  ellipse(x, y, diam, diam);
-
-  // Draw the movable bar on the right side of the screen
-  rect(0, 0, 20, height); // Left wall
-  rect(width-30, mouseY-rectSize/2, 10, rectSize); // Movable bar
-  
-  // Update ball position by adding its speed to its current position
-  x += speedX;
-  y += speedY;
-
-  // if ball hits the movable bar, invert X direction
-  if (x > width-30 && x < width -20 && y > mouseY-rectSize/2 && y < mouseY+rectSize/2) {
-    speedX = speedX * -1; // Change horizontal direction
-  } 
-
-  // if ball hits left or right walls, change direction of X and increase speed
-  if (x < 25 || x > width - 25) {
-    speedX *= -1.1; // Invert X direction and increase speed
-    speedY *= 1.1; // Increase Y speed
-    x += speedX; // Move the ball
-  }
-
-  // if ball hits top or bottom walls, change direction of Y   
-  if (y > height || y < 0) {
-    speedY *= -1; // Invert Y direction
-  }
-}
-
-void mousePressed() {
-  reset(); // Reset the ball's position and speed when mouse is clicked
-}
-
-~~~
-> Output (screen recorded video)
+> Video
 <video align="centre" width="100%" height="100%" controls muted>
-  <source src="img/processing/processingsimplegame_1.mp4" type="video/mp4">
+  <source src="img/processing/circle_game.mp4" type="video/mp4">
 </video>
+
 
 ### Processing with Arduino
 
-<h2 align="center">An Arduino Radar System with Real-time Processing<h2>
+<h2 align="center">Automated Distance Sensing and Alert System using Arduino</h2>
 
 <h3>Introduction : </h3>
-Processing for real-time analysis and visualization, this project merges hardware and software. Arduino manages sensor data and motor control, while Processing interprets this data, creating a dynamic visual interface. Experience the synergy between Arduino's hardware control and Processing's data visualization in crafting an interactive radar system.
+The system utilizes an ultrasonic sensor to measure distances and a servo motor to scan the surroundings within a defined range. It operates on an Arduino platform, facilitating real-time distance measurements and subsequent response mechanisms. The primary objective is to detect objects within a certain distance and trigger visual and auditory alerts accordingly.
 
 <h3>Components needed</h3> :
-*Arduino UNO<br>
-*SG90 Micro-servo motor<br>
-*Ultrasonic Sensor - HC-SR04 (Generic)<br>
-*Breadboard (generic)<br>
-*Jumper wires (generic)<br>
-<br>
-<img src="img/processing/component_for_radar.png">
-<br>
 
-<h3>Software </h3>: <br>
+- Arduino UNO<br>
+- SG90 Micro-servo motor<br>
+- Ultrasonic Sensor - HC-SR04 <br>
+- LED
+- Breadboard <br>
+- Jumper wires <br>
+
+<h3>Software : </h3> <br>
 <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and <a href="https://processing.org/download/">Processing</a>
 <br>
 
-<h3>Steps</h3> :
+<h3>Steps :</h3> 
 
 Circuit Setup:
 
- - Connect the ultrasonic sensor to the Arduino board.<br>
- - Connect the servo motor to the Arduino to enable rotation.<br>
- - Power up the components and ensure they're properly connected.<br>
+- Ultrasonic Sensor:
+  - VCC pin of the sensor -> 5V pin on Arduino
+  - Trig pin -> Digital pin 10 on Arduino
+  - Echo pin -> Digital pin 11 on Arduino
+  - GND pin of the sensor -> GND pin on Arduino
+
+- Servo Motor:
+  - Signal wire  -> Digital pin 12 on Arduino
+  - VCC -> 5V pin on Arduino
+  - GND -> GND pin on Arduino
+
+- LED:
+  - Anode (longer leg) -> Resistor -> Digital pin 13 on Arduino
+  - Cathode (shorter leg) -> GND pin on Arduino
+
+- Buzzer:
+  - Positive (usually marked with a “+” or longer leg) -> Digital pin 9 on Arduino
+  - Negative -> GND pin on Arduino
+
+- Power:
+  - Arduino board powered through USB or an external power supply.
  <br>
 
- <img src="img/processing/radar_diagram.png">
+ <img src="img/processing/processingwitharduino.png">
 
-Arduino Programming: (code and explanation (comments))
+> Arduino Programming: (code and explanation (comments))
 
  - Code the Arduino to read data from the ultrasonic sensor.<br>
  - Control the servo motor to enable it to sweep across a defined angle range, like a radar scanner.<br>
  - Process the data received from the sensor.<br>
 
     ~~~
-    #include <Servo.h> // Include the Servo library
+          #include <Servo.h>
 
-      const int trigPin = 10; // Pin connected to the trigger pin of the ultrasonic sensor
-      const int echoPin = 11; // Pin connected to the echo pin of the ultrasonic sensor
-      long duration; // Variable to hold the duration of sound wave travel
-      int distance; // Variable to hold the calculated distance
-      Servo myServo; // Create a servo object
+      // Define the pins
+      const int trigPin = 10;       // Trigger pin for ultrasonic sensor
+      const int echoPin = 11;       // Echo pin for ultrasonic sensor
+      const int ledPin = 13;        // LED pin
+      const int buzzerPin = 9;      // Buzzer pin
+
+      long duration;                 // To store the duration of sound wave travel
+      int distance;                  // Calculated distance variable
+      Servo myServo;                 // Servo motor object
 
       void setup() {
-        pinMode(trigPin, OUTPUT); // Set trigPin as an output
-        pinMode(echoPin, INPUT); // Set echoPin as an input
-        Serial.begin(9600); // Initialize serial communication
-        myServo.attach(12); // Attach the servo to pin 12
+        // Set pin modes
+        pinMode(trigPin, OUTPUT);   // Trigger pin as output
+        pinMode(echoPin, INPUT);    // Echo pin as input
+        pinMode(ledPin, OUTPUT);    // LED pin as output
+        pinMode(buzzerPin, OUTPUT); // Buzzer pin as output
+        
+        Serial.begin(9600);         // Start serial communication for debugging
+        myServo.attach(12);         // Attach the servo to pin 12
       }
 
       void loop() {
-        // Sweep the servo from 15 to 165 degrees
+        // Sweep the servo motor from 15 to 165 degrees
         for (int i = 15; i <= 165; i++) {
-          myServo.write(i); // Move the servo to position 'i'
-          delay(30); // Delay for servo movement
+          myServo.write(i);         // Set servo to angle i
+          delay(30);                // Delay for servo movement
           distance = calculateDistance(); // Calculate distance
-          Serial.print(i); // Print servo position
-          Serial.print(",");
-          Serial.print(distance); // Print measured distance
-          Serial.print(".");
+          Serial.print(i);          // Print servo angle
+          Serial.print(",");        // Separator
+          Serial.print(distance);   // Print distance measured
+          Serial.print(".");        // Separator
+
+          // Check if an object is detected within 40 cm
+          if (distance < 40) {
+            digitalWrite(ledPin, HIGH); // Turn on LED
+            tone(buzzerPin, 1000);      // Play a tone on the buzzer
+          } else {
+            digitalWrite(ledPin, LOW);  // Turn off LED
+            noTone(buzzerPin);          // Turn off buzzer
+          }
         }
 
-        // Sweep the servo from 165 to 15 degrees
+        // Sweep the servo motor from 165 to 15 degrees
         for (int i = 165; i > 15; i--) {
-          myServo.write(i); // Move the servo to position 'i'
-          delay(30); // Delay for servo movement
+          myServo.write(i);         // Set servo to angle i
+          delay(30);                // Delay for servo movement
           distance = calculateDistance(); // Calculate distance
-          Serial.print(i); // Print servo position
-          Serial.print(",");
-          Serial.print(distance); // Print measured distance
-          Serial.print(".");
+          Serial.print(i);          // Print servo angle
+          Serial.print(",");        // Separator
+          Serial.print(distance);   // Print distance measured
+          Serial.print(".");        // Separator
         }
       }
 
+      // Function to calculate distance using the ultrasonic sensor
       int calculateDistance() {
-        digitalWrite(trigPin, LOW); // Set the trigPin low
-        delayMicroseconds(2); // Delay to ensure stability
-
-        digitalWrite(trigPin, HIGH); // Send a 10 microsecond high pulse to trigger
+        digitalWrite(trigPin, LOW);       // Set trigger pin low
+        delayMicroseconds(2);             
+        
+        digitalWrite(trigPin, HIGH);      // Send a 10us pulse to trigger the sensor
         delayMicroseconds(10);
-        digitalWrite(trigPin, LOW); // Set the trigger pin low after the pulse
-
-        duration = pulseIn(echoPin, HIGH); // Measure the duration of the echo pulse
-        distance = duration * 0.034 / 2; // Calculate distance based on the speed of sound
-        return distance; // Return the calculated distance
+        digitalWrite(trigPin, LOW);
+        
+        duration = pulseIn(echoPin, HIGH);  // Measure the duration of the echo pulse
+        distance = duration * 0.034 / 2;    // Calculate distance using speed of sound
+        return distance;                    // Return the calculated distance
       }
+
 
     ~~~ 
 
-Processing Programming: (Code and explanation (comments))
+>Processing Programming: (Code and explanation (comments))
 
  - Create a visualization in Processing to represent the radar screen.<br>
  - Establish communication between Arduino and Processing (serial communication) to receive data.<br>
@@ -421,17 +417,17 @@ Integration:
  - Run the Processing sketch on the computer.<br>
 
 
-Functionality:
- - The ultrasonic sensor measures distances by sending and receiving sound waves.<br>
- - The servo motor rotates the sensor, scanning an area.<br>
- - Arduino processes the sensor data and communicates it to the computer.<br>
- - Processing receives this data and creates a real-time visualization of detected objects on the screen.<br>
+- Functionality :
+  - The Arduino continuously sweeps the servo motor while measuring distances using the ultrasonic sensor.
 
- <img src="img/processing/processingradar_connection.png">
+  - Calculates the distance at different angles and sends this information serially to the connected computer.
+  - Provides feedback through LED and buzzer based on detected object proximity within the specified range.
+
+ <img src="img/processing/processingwitharduino.jpeg">
  <br>
 
 Project video :
 
 <video align="centre" width="100%" height="100%" controls muted>
-  <source src="img/processing/processing_radar_video.mp4" type="video/mp4">
+  <source src="img/processing/processingwitharduino.mp4" type="video/mp4">
 </video>
