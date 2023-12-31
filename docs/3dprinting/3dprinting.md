@@ -1,0 +1,245 @@
+### 3D Printing Background
+<h2 align="center">Background and Basic</h2>
+3D printing also known as additive manufacturing, is a process of creating three-dimensional objects from a digital model. It works by adding material layer by layer until the final object is formed.
+
+<h2>Basic Process: </h2>Designing a Model: A digital 3D model is created using Computer-Aided Design (CAD) software or obtained from 3D scanners that capture physical objects.
+
+- Slicing: The digital model is sliced into thin horizontal layers using slicing software, generating a set of instructions (G-code) for the printer to follow.
+
+- Printing: The 3D printer reads the G-code and starts building the object layer by layer using the selected material.
+
+- Layer-by-Layer Construction: The material is deposited, solidified, or fused according to the design, gradually forming the final object.
+
+<h2>Types of 3D Printing Technologies: </h2>
+
+- Fused Deposition Modeling (FDM)/Fused Filament Fabrication (FFF): This is one of the most common methods where thermoplastic filaments are heated and extruded through a nozzle to create layers.
+
+- Stereolithography (SLA): Uses a UV laser to solidify liquid resin layer by layer to create precise and detailed objects.
+
+- Selective Laser Sintering (SLS): Utilizes a high-powered laser to fuse powdered materials (plastic, metal, etc.) together to form the object.
+
+- Digital Light Processing (DLP): Similar to SLA, but uses a projector to cure entire layers of resin at once.
+
+- Binder Jetting: Binder Jetting involves depositing a binding agent onto a bed of powder material selectively. Once a layer is complete, a new layer of powder is spread, and the process repeats until the object is formed.
+
+- Material Jetting: Material Jetting operates similarly to inkjet printing, where droplets of material are selectively deposited onto a build platform and cured or solidified to form the object.
+
+
+
+<h2>Materials Used:</h2>
+
+- Plastics: PLA, ABS, PETG are commonly used in FDM printers.
+- Resins: Used in SLA and DLP printers, offering high detail and smooth finishes.
+- Metals: Aluminum, titanium, steel, etc., used in metal 3D printing processes.
+- Ceramics, Composites, and more: The range of printable materials is continuously expanding.
+<h2>Applications:<h2>
+
+- Prototyping: Rapid creation of prototypes for product development.
+- Customization: Personalized products like jewelry, prosthetics, and orthodontics.
+- Manufacturing: Small-scale production of specialized parts and components.
+- Healthcare: Creating implants, medical models, and bioprinting tissues.
+<h2>Advantages:</h2>
+
+- Design Freedom: Complex geometries and intricate structures are feasible.
+- Rapid Prototyping: Accelerates the design and testing phase.
+- Customization: Tailored products for specific needs.
+- Reduced Waste: Material is used precisely, minimizing waste.
+<h2>Limitations:</h2>
+
+- Speed: Some processes can be time-consuming.
+- Material Limitations: Certain materials may have limited availability or properties.
+- Quality and Resolution: Surface finish and resolution might not match traditional manufacturing methods for some applications.
+
+### 3D printing Practice
+<h2 align="center">Printing Practice</h2>
+
+<a href="https://www.thingiverse.com/thing:3308710">Spring car</a> 3D print.
+
+<h2>Software</h2>
+<a href="https://www.autodesk.com/products/fusion-360/overview?cjdata=MXxOfDB8WXww&panel=buy&AID=10282382&PID=8206971&SID=jkp_Cj0KCQiAv8SsBhC7ARIsALIkVT3qGHm0MfeDTNButqbhhfXCpGNhrQ3DkJAAZ9ghhI9etShEd0kChe4aAj0FEALw_wcB&cjevent=9f5877e7a7bd11ee81ec7a050a1eba23&mktvar002=afc_us_deeplink&affname=8206971_10282382">Fusion 360</a>
+<br>
+<a href="https://www.flashforge.com/product-detail/FlashPrint-slicer-for-flashforge-fdm-3d-printers">Flash Print 5</a> Slice software.
+
+### Slice
+
+> Open Slice software 
+<br>
+
+<img src="img/3D/slice_1.png">
+<br>
+
+> Import the .stl file of design
+<br>
+
+<img src="img/3D/slice_2.png">
+<br>
+
+> Move the design into platform (if needed) and put the design on platform.After that i click support to set support (if needed).
+<br>
+
+<img src="img/3D/slice_3.png">
+<br>
+
+> For our design we haven't use any support
+<br>
+
+<img src="img/3D/slice_4.png">
+<br>
+
+> Then start slicing
+<br>
+
+<img src="img/3D/slice_5.png">
+<br>
+
+### Parameter setting in slice software
+
+> Printer parameter
+<br>
+
+<img src="img/3D/slice_6.png">
+<br>
+
+> Shells parameter
+<br>
+
+<img src="img/3D/slice_6.1.png">
+<br>
+
+> Infill parameter
+<br>
+
+<img src="img/3D/slice_6.2.png">
+<br>
+
+> Raft parameter
+<br>
+
+<img src="img/3D/slice_7.png">
+<br>
+
+> Advanced Parameter
+<br>
+
+<img src="img/3D/slice_8.png">
+<br>
+
+> Now start slicing
+<br>
+
+<img src="img/3D/slice_9.png">
+<br>
+
+### Slice preview
+
+> Click "Slice Preview" to see the preview.
+<br>
+
+<img src="img/3D/slice_10.png">
+<br>
+
+> Slice preview 
+<br>
+
+<img src="img/3D/slice_11.png">
+<br>
+
+### Manufacturing method
+
+> Turn on the 3D machine
+<br>
+
+<img src="img/3d/3dprint/3d-1.jpeg">
+<br>
+
+>Now the interface is on and and click Tools
+<br>
+
+<img src="img/3d/3dprint/3d-2.jpg">
+<br>
+
+> Now click Level for leveling
+<br>
+
+<img src="img/3d/3dprint/3d-3.jpg">
+<br>
+
+> Now follow the screen and wait
+<br>
+
+<img src="img/3d/3dprint/3d-4.jpg">
+<br>
+
+> Follow the screen and click OK. (In your case or different time the following steps could be different.It depends at when you start working in the machine)
+<br>
+
+<img src="img/3d/3dprint/3d-5.jpg">
+<img src="img/3d/3dprint/3d-7.jpg">
+<img src="img/3d/3dprint/3d-6.jpg">
+<img src="img/3d/3dprint/3d-8.jpg">
+<img src="img/3d/3dprint/3d-9.jpg">
+<img src="img/3d/3dprint/3d-10.jpg">
+
+> Load filament
+<br>
+
+<img src="img/3d/3dprint/3d_10.2.jpeg">
+<img src="img/3d/3dprint/3d_10.1.jpeg">
+
+> Now Leveling has completed and machine is ready to print.And import the .gx design file by using pendrive. You can also use your laptop/computer and you can also use cloud.
+<br>
+
+<img src="img/3d/3dprint/3d-1.1.jpg">
+<br>
+
+> Now go to build and select the design and click build.
+<br>
+
+<img src="img/3d/3dprint/3d-12.jpg">
+<img src="img/3d/3dprint/3d_10.3.jpeg">
+<img src="img/3d/3dprint/3d_10.4.jpeg">
+<br>
+
+> Now print has completed, click OK.
+<br>
+
+<img src="img/3d/3dprint/3d-15.jpg">
+<br>
+
+### Postprocess of 3D printing
+
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/3d/3dprint/3dptintpostprocess.mp4" type="video/mp4">
+</video>
+<br>
+
+<img src="img/3d/3dprint/3dprintpostprocesspicture.jpeg">
+<br>
+
+> Video
+<br>
+
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/3d/3dprint/3dprintvideo1.mp4" type="video/mp4">
+</video>
+<br>
+
+### G-code Reading
+
+### New Research and Application of 3D printing
+
+3D printing is a rapidly evolving field, and ongoing research and applications continue to push its boundaries. Here is one recent advancements:
+
+<b>Bioprinting and Tissue Engineering:</b> 
+<br>
+
+<img src="img/3d/3dprint/3dbiotech.jpg">
+<br>
+
+Vascularization: Researchers are focusing on printing tissues with intricate vascular networks to ensure better functionality and integration within the body.
+Drug Testing and Disease Models: 3D-printed tissues and organs are being used as models for drug testing, disease study, and personalized medicine.
+
+<br>
+Reference for new research : <a href="https://www.sciencedirect.com/science/article/abs/pii/S0169409X18301509">Sciencedirect</a>
+<br>
+<br>
