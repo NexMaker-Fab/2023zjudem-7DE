@@ -48,34 +48,65 @@ When programming in Processing, all additional classes defined will be treated a
 
 Processing also allows for users to create their own classes within the PApplet sketch. This allows for complex data types that can include any number of arguments and avoids the limitations of solely using standard data types such as: int (integer), char (character), float (real number), and color (RGB, RGBA, hex).
 
-<h2>Example</h2>
-The following code is a better example of the look and feel of the language.
+<h2>Properties</h2>
+
+- Variables (int, float, String): Declares variables to store integers (x), floating-point numbers (y), and strings (message).
+
+- Setup Function (setup()): Initializes the canvas with a size of 400x400 pixels.
+
+- Draw Function (draw()): Runs continuously in a loop and displays shapes and text on the canvas.
+
+- Drawing Shapes (rect(), ellipse()): Draws shapes like rectangles and ellipses on the canvas at specified positions.
+
+- Text Display (text(), textSize()): Displays the string message on the canvas at a specific position with a specified text size.
+
+- Mouse Interaction (mousePressed()): Updates the position of shapes (x and y) based on the mouse coordinates when the mouse is pressed.
+
+This example code covers basic variable declaration, drawing shapes, displaying text, setting up the canvas, and responding to mouse events in Processing.
+
 
 ~~~
-// Hello mouse.
-void setup() {
-  size(400, 400);
-  stroke(255);
-  background(192, 64, 0);
-}
+          /int x = 100; // Declaration of a variable 'x' of type integer and assignment of value 100
+          float y = 200.5; // Declaration of a variable 'y' of type float and assignment of value 200.5
+          String message = "Hello, Processing!"; // Declaration of a variable 'message' of type String
 
-void draw() {
-  line(150, 25, mouseX, mouseY);
-}
+          void setup() {
+            size(400, 400); // Creates a canvas of size 400x400 pixels
+          }
+
+          void draw() {
+            background(220); // Sets the background color to light gray
+
+            // Drawing shapes
+            fill(255, 0, 0); // Set fill color to red (RGB)
+            rect(x, 50, 50, 50); // Draws a red rectangle at position 'x', 50 with width and 
+             height of 50
+
+            fill(0, 255, 0); // Set fill color to green (RGB)
+            ellipse(200, y, 80, 80); // Draws a green ellipse at position 200, 'y' with a 
+             width and height of 80
+
+            // Displaying text
+            fill(0); // Set text color to black
+            textSize(20); // Set text size to 20
+            text(message, 50, 300); // Display the message at position 50, 300
+          }
+
+          void mousePressed() {
+            x = mouseX; // Update the 'x' position to the current mouse x-coordinate when 
+             mouse is pressed
+            y = mouseY; // Update the 'y' position to the current mouse y-coordinate when 
+             mouse is pressed
+          }
+
 ~~~
 
 > Output 
-<br>
-<br>
- <img src="img/processing/processing example_1.png">
- <br>
- <br>
-
-> Video 
+Video 
 <br>
 <br>
 <video align="centre" width="100%" height="100%" controls muted>
-  <source src="img/processing/processingexample_video_1.mp4" type="video/mp4">
+  <source src="img/processing/processingproparties.mp4" type="video/mp4">
 </video>
 
  <br>
@@ -431,3 +462,91 @@ Project video :
 <video align="centre" width="100%" height="100%" controls muted>
   <source src="img/processing/processingwitharduino.mp4" type="video/mp4">
 </video>
+<br>
+
+### Kinect,Leapmotion or IOT platform
+
+Communicating with Kinect, Leap Motion, or IoT platforms in Processing involves using specific libraries and APIs tailored for each device or platform. Here's a brief overview of how you might interface with each:
+
+- Kinect with Processing:
+
+  - Example: Using SimpleOpenNI or OpenKinect libraries in Processing to access Kinect's depth sensing and skeletal tracking features.
+Application: Creating interactive installations, gesture-controlled applications, virtual reality experiences, or games that utilize body movements.
+- Leap Motion with Processing:
+
+  - Example: Implementing the Leap Motion for Processing library to capture hand and finger tracking data.
+  - Application: Developing interactive interfaces, 3D modeling applications, educational tools, or games that respond to hand gestures and movements.
+- IoT Platforms with Processing:
+
+  - Example: Using HTTP requests or specific IoT platform libraries/APIs to send and receive data from connected devices in Processing.
+  - Application: Building data visualization dashboards, smart home applications, environmental monitoring systems, or interactive installations that utilize data from IoT sensors.
+<h2>Example Applications:</h2>
+<br>
+- Gesture-Controlled Art Installation: Combining Kinect and Processing to create an interactive art piece where people's movements manipulate visual elements on a screen or projection.
+
+- Educational Tool with Leap Motion: Developing a physics simulation using Leap Motion and Processing, allowing users to interact with virtual objects and observe their behavior based on hand gestures.
+
+- IoT-Enabled Smart Home Interface: Using Processing and IoT platform APIs to design a user interface that controls various smart devices in a home, such as lights, thermostats, and security systems.
+
+- Environmental Monitoring System: Integrating IoT sensors with Processing to collect and visualize data related to temperature, humidity, or air quality, creating a real-time monitoring system.
+
+Each of these examples showcases how these technologies can be combined with Processing to create diverse and interactive applications across art, education, home automation, and data visualization.
+
+### GUI
+
+Creating a Graphic User Interface (GUI) in Processing involves a combination of design principles and programming techniques. Here's a detailed breakdown of interpreting and implementing design and programming protocols for building a GUI in Processing:
+
+<h2>Interpret Design Protocols</h2>
+
+- User Requirements and Flow:
+
+  - Understand the user's needs and how they'll interact with the interface.
+  - Define the user flow, outlining how users will navigate through the interface.
+- Wireframing and Sketching:
+
+  - Create wireframes or sketches that depict the layout and arrangement of elements in the interface.
+  - Plan the position of buttons, input fields, text areas, and any other interactive elements.
+- Visual Design and Components:
+
+  - Choose appropriate colors, typography, and visual components that align with the interface's purpose and the user's expectations.
+  - Design icons, buttons, backgrounds, and other visual elements that maintain consistency and clarity.
+- Accessibility and Usability:
+
+  - Ensure the interface is accessible and usable for all users, adhering to accessibility guidelines.
+  - Focus on intuitive navigation, clear feedback, and readability of content.
+<h2>Implement Programming Protocols</h2>
+
+- Choosing Libraries:
+
+  - Select a suitable GUI library for Processing, such as ControlP5 or G4P, based on the desired interface elements and functionalities.
+- Initializing the Library:
+
+  - Import and initialize the chosen GUI library within the Processing sketch.
+  - Create necessary objects to manage GUI elements.
+- Designing UI Elements:
+
+  - Use library functions to create buttons, sliders, text inputs, checkboxes, etc., based on the wireframes or sketches.
+  - Define the appearance, position, and behavior of each UI element within the Processing sketch.
+- Event Handling and Functionality:
+
+  - Implement event handlers or callback functions to respond to user interactions with GUI elements (e.g., button clicks, slider changes).
+  - Write functions or methods that execute specific actions based on user input.
+- Layout and Structure:
+
+  - Organize and structure the GUI elements within the sketch, ensuring proper alignment and spacing for a visually appealing layout.
+- Testing and Refinement:
+
+  - Test the GUI extensively to identify and resolve any bugs or usability issues.
+  - Gather feedback from users and iterate on the design and functionality for improvements
+
+<h2>Considerations</h2>
+
+- Responsive Design: Ensure the interface adapts well to different screen sizes and orientations.
+- Scalability: Design the GUI in a way that allows for easy expansion and addition of new features.
+- Documentation and Maintenance: Document your code and keep it well-structured for easier maintenance and future updates.
+
+By following these protocols, you can create a functional and visually appealing GUI in Processing that meets the needs of the users and enhances the overall user experience.  
+
+
+
+
