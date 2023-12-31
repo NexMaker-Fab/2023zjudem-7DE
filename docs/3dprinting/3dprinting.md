@@ -155,49 +155,49 @@
 >Now the interface is on and and click Tools
 <br>
 
-<img src="img/3d/3dprint/3d-2.jpg">
+<img src="img/3d/3dprint/3d-2.JPG">
 <br>
 
 > Now click Level for leveling
 <br>
 
-<img src="img/3d/3dprint/3d-3.jpg">
+<img src="img/3d/3dprint/3d-3.JPG">
 <br>
 
 > Now follow the screen and wait
 <br>
 
-<img src="img/3d/3dprint/3d-4.jpg">
+<img src="img/3d/3dprint/3d-4.JPG">
 <br>
 
 > Follow the screen and click OK. (In your case or different time the following steps could be different.It depends at when you start working in the machine)
 <br>
 
-<img src="img/3d/3dprint/3d-5.jpg">
-<img src="img/3d/3dprint/3d-7.jpg">
-<img src="img/3d/3dprint/3d-6.jpg">
-<img src="img/3d/3dprint/3d-8.jpg">
-<img src="img/3d/3dprint/3d-9.jpg">
-<img src="img/3d/3dprint/3d-10.jpg">
+<img src="img/3d/3dprint/3d-5.JPG">
+<img src="img/3d/3dprint/3d-7.JPG">
+<img src="img/3d/3dprint/3d-6.JPG">
+<img src="img/3d/3dprint/3d-8.JPG">
+<img src="img/3d/3dprint/3d-9.JPG">
+<img src="img/3d/3dprint/3d-10.JPG">
 
 > Load filament
 <br>
 
-<img src="img/3d/3dprint/3d_10.2.jpeg">
-<img src="img/3d/3dprint/3d_10.1.jpeg">
+<img src="img/3d/3dprint/3d_10_2.jpeg">
+<img src="img/3d/3dprint/3d_10_1.jpeg">
 
 > Now Leveling has completed and machine is ready to print.And import the .gx design file by using pendrive. You can also use your laptop/computer and you can also use cloud.
 <br>
 
-<img src="img/3d/3dprint/3d-1.1.jpg">
+<img src="img/3d/3dprint/3d-1_1.jpg">
 <br>
 
 > Now go to build and select the design and click build.
 <br>
 
 <img src="img/3d/3dprint/3d-12.jpg">
-<img src="img/3d/3dprint/3d_10.3.jpeg">
-<img src="img/3d/3dprint/3d_10.4.jpeg">
+<img src="img/3d/3dprint/3d_10_3.jpeg">
+<img src="img/3d/3dprint/3d_10_4.jpeg">
 <br>
 
 > Now print has completed, click OK.
