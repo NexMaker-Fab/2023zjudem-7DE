@@ -1,213 +1,186 @@
 ### Final project's Draft 
 
- <h1 align="center">A SMART MULTIFUTIONARY DUSTBIN FOR LDC</h1>
- <h2>Background Information</h2>
- A lot of public places in least developed areas mostly rural areas still use open bins or bins with foot pedal for clinical waste, as a result sometimes when the petal malfunctions, the waste is not disposed off well leading to poor hygiene. At times the design of the bins permits it to overfill or overflow resulting on some waste ending up on the floor.
-The dustbin can also be used in other places such as kitchen, living room, bathroom, bedroom, etc. 
+ <h1 align="center">A SMART WASTE SEGREGATOR DUSTBIN</h1>
+
+### PURPOSE OF THE PROJECT
+
+To design a smart waste separator bin that would help contribute to alleviating the waste in many African areas and ensuring a proper channel of waste disposal and reuse/ recycling of waste without causing further harm to the environment. Many waste items such as plastic and metal can be reused or repurposed if they are separated from the rest of the garbage. However, manual sorting of waste is tedious, time-consuming, and inefficient. That is why we have developed an Arduino-based trash separation project that can automatically sort plastic and metal waste using sensors and actuators. Moreover, our project can also detect when the trash bin is full and alert the user or the waste management service. 
+
+
+<h2>Project goal</h2>
+
+- The waste separator bin;
+- Act as a groundbreaking waste management solution
+- Simplifies garbage sorting with advanced sensors and algorithms
+- Reduces the need for multiple bins by incorporating separate chambers for different waste materials
+- Saves time and effort by automatically sorting items like plastic bags, metal items
+- Enhances aesthetics with a modern and stylish design
+- Features a hand motion sensor for automatic lid opening upon approach
+- Alerts users when chambers are full and need emptying
+
+### TARGETED SDGs
+
+<h2 align="center">Primary SDG</h2>
 <br>
-<br>
- <h2>Existing Products</h2>
-
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/dustbin_pic1.png">
-    </div>
-    <div style="flex: 4; padding: 10px;">
-        <h3>High Quality Kitchen Bathroom Smart Sensor Trash Can Automatic Sanitary Lady Bin. (Made-in-China.com )</h3>
+<div style="text-align:center">
+<img src="img/final_project_draft/primarysdg.png" width="200" height="200">
 </div>
-</div> 
-
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/dustbin_pic2.png">
-    </div>
-    <div style="flex: 4; padding: 10px;">
-        <h3>Bathroom Touchless Trash Can - Anborry 2.2 Gallon Smart Automatic Motion Sensor Rubbish Can with Lid Electric Waterproof Narrow Small Garbage Bin for Kitchen, Office, Living Room, Toilet, Bedroom, RV. (amazon.ca)</h3>
-</div>
-</div> 
-
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/dustbin_pic3.png">
-    </div>
-    <div style="flex: 4; padding: 10px;">
-        <h3>Pyle Smart Garbage Bin - Digital Trash Can with Built-in Dirt Vacuum and Motion Sensor Lid (5L)</h3>
-</div>
-</div>
-
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/dustbin_pic4.png">
-    </div>
-    <div style="flex: 4; padding: 10px;">
-        <h3>Modern Solar Smart Bin Gen Model</h3>
-</div>
-</div>
-
-<h2>Product Idea</h2>
-To design a smart dustbin that senses motion and opens, and its also able to sense the amount of waste inside it, when the waste exceed a certain point it put on the red light and refuses to open even when it senses motion. A vacuum will be added to clean the area where the dustbin will be used.
-The plan is to cover the SDG 3& 6 for sanitation along with good health and well being. This is because its through proper sanitation that the health of people cannot be compromised.
-
-<style>
-  .image-container{
-    text-align: center;
-  }
-
-  .image-container img{
-    display: inline-block;
-    margin: 10px;
-    max-width: 100%;
-    max-height: 100%;
-  }
-</style>
-
-
-<div class="image container">
-  <img src="img/final_project_draft/dustbin_pic5.png">
-  <img src="img/final_project_draft/dustbin_pic6.png">
-</div>
-
-<h2>Product Idea Sketch</h2>
-<br>
-<br>
-<div class="image container">
-    <img src="img/final_project_draft/dustbin_pic7.png">
-</div>
-
-<h2>Areas of Innovation -</h2>
-* Use of cheap materials- reduction of costs.<br>
-* Use sustainable energy-easily accessible.<br>
-* Multi functionality of product.<br>
-
-<h2>Components we might need -</h2>
-- Arduino UNO <br>
-- Grove- ultrasonic distance sensor <br> 
-- Grove -servo motor<br>
-- Solar power<br>
-- LED lights <br>
-- Gear motor with wheels <br>
-- Battery <br>
-- Glue gun <br>
-- Insulation tape <br>
-
- <!--<br>
- <h1 align="center">SMART BODY TEMPERATURE BABY BRACELET</h1>
- The smart body temperature baby bracelet is a device that contains a smart thermometer which 
-is wearable and continuously monitors the temperature of a baby, alarming the parent or 
-caretaker wherever the temperature becomes abnormal.
-
-<h2>BACKGROUND INFORMATION</h2>
-
-According to research, heat stress and hyperthermia are common findings in sudden infant 
-death syndrome (SIDS) victims. Sudden infant death syndrome (SIDS) is been defined as “the 
-sudden death of an infant under 1 year of age whereas Hyperthermia is defined as an 
-abnormally high body temperature caused by a failure of the heat-regulating mechanisms of 
-the body to deal with the heat coming from the environment (The National Institutes of health-NIH). Due to the abnormal high body temperature of the baby, some babies end up dying.
-
-Certain study done by Stanton in 1984, it showed that from 34 SIDS victims 
-studied, “19 babies were unusually hot or sweating when found dead; 14 died in an unusually 
-warm environment; 17 had evidence of a terminal infective illness; and 24 were excessively 
-clothed or overwrapped. In 6 of 15 babies (40%) whose rectal temperature was recorded after 
-death, the temperature was above 37°C, the highest being 42°C”. Profuse sweating has been 
-found on the scene of SIDS, and some SIDS twins were found covered with abundant sweat. This bring us to the conclusion that considering this study results a lot of infant death were 
-related to a high temperature in babies.
-
-<h2>INTRODUCTION</h2>
-
-Infant death is a problem affecting people worldwide, hence a need to bring about products that 
-solve or reduce infant death rate is of high importance. With the background information 
-provided it shows that one way of reducing death rates could be through regulating their 
-temperatures not to reach the abnormal stage. Therefore, our group will be based on improving 
-the existing smart watches available.
-
-<h2 align="center">LITERATURE REVIEW</h2>
-
-<h3>SMART BABY BRACELET/WATCH AVAILABLE IN THE MARKET</h3>
 <br>
 
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/proto1.png">
-    </div>
-    <div style="flex: 2; padding: 10px;">
-        <h3> Liip Smart Baby Monitor Bracelet – Heartbeat,Oxygen and Temperature Sensor</h3><br>
-          > Measures your babies’ real-time pulse,blood oxygen and distal temperature.<br>
-          > Charges in one hour, allowing autonomy of 13 continuous hours.<br>
-          > Detects vital signs in real-time.<br>
-          > Connects up to 20 devices.<br>
-          > Suitable for newborns to 7 years old.<br>
-          > Price: £299.00, 2,674.75 RMB.<br>
-</div>
-</div>
+According to the UN, Sustainable Development Goal (SDG) 11 focuses on creating sustainable cities and communities. The goal emphasizes the importance of making urban areas inclusive, safe, resilient, and environmentally sustainable. Here are key components and targets of SDG 11:
 
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/proto2.jpeg">
-    </div>
-    <div style="flex: 2; padding: 10px;">
-        <h3> HALO Sleep Sure Smart Baby Monitor - Live Heart Rate View, Rollover,Skin Temperature,and Motion</h3><br>
-          > Material: Plastic<br>
-          > Color: White<br>
-          > Compatible Devices: Smartphones<br>
-          > Screen Size: 1.54<br>
-          > Battery Life: 24 Hours<br>
-          > Sensor Type: Temperature<br>
-          > Battery Description: Lithium-Ion<br>
-          > Price: $215.00, 1,569.95 RMB<br>
-</div>
-</div>
+1. Urbanization Challenges:
+SDG 11 addresses the challenges posed by rapid urbanization. As more people move to cities, the goal is to ensure that this growth is managed in a way that is sustainable and does not lead to negative impacts on the environment, infrastructure, and social well-being.
 
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/proto3.jpeg">
-    </div>
-    <div style="flex: 2; padding: 10px;">
-        <h3> BEMPU bracelet For body temperature (hypothermia)</h3><br>
-          > detects and alerts in the event of hypothermia, facilitating improved thermal care of newborns.<br>
-          > Has an intuitive audio-visual alarm<br>
-          > Price: 1 to 20 USD, 7.30 to 146 RMB<br>
-</div>
-</div>
+2. Inclusive and Safe Cities:
+The goal aims to create cities that are inclusive, safe, and accessible for all, irrespective of age, gender, disability, or socioeconomic status. This includes providing adequate housing, transportation, and public spaces that cater to the diverse needs of urban populations.
 
-<div style="display: flex; flex-direction: row;">
-    <div style="flex: 1; padding: 10px;">
-         <img src="img/final_project_draft/proto4.jpeg">
-    </div>
-    <div style="flex: 2; padding: 10px;">
-        <h3> Cherub Smart Body Temperature Bracelet Bluetooth Thermometer Child Baby Thermometer A smart product for measuring children’s body temperature, with alarm</h3><br>
-          > Main control chip: AMICCOM A8105 <br>
-          > Bluetooth version: BLE4.0<br>
-          > Temperature sensor: NTC sensor<br>
-          > Display: LCD<br>
-          > Temperature accuracy: ± 0.1 (32 degree - 42 degree)<br>
-          > Standby time: 12 months<br>
-          > Strap: Silicone Length 22.5cm<br>
-          > Price: MYR90.17, 139.64 RMB<br>
-</div>
+3. Resilience to Disasters:
+Building resilience to natural and man-made disasters is a crucial aspect of SDG 11. This involves planning and designing cities to withstand and recover from disasters such as floods, earthquakes, and other emergencies.
+
+4. Environmental Sustainability:
+SDG 11 emphasizes the need for cities to adopt sustainable practices that reduce their environmental impact. This includes promoting energy efficiency, waste reduction, sustainable transportation, and green spaces within urban areas.
+
+5. Access to Safe and Affordable Housing:
+Ensuring access to safe and affordable housing is a key target. SDG 11 seeks to address issues related to slums and informal settlements, promoting the development of affordable housing for all.
+
+6. Public Transportation and Sustainable Mobility:
+Improving public transportation and promoting sustainable mobility options are critical components. This involves investing in efficient and accessible public transportation systems, cycling infrastructure, and pedestrian-friendly urban planning.
+
+7. Cultural Heritage Preservation:
+The goal recognizes the importance of preserving cultural heritage in urban areas. This involves safeguarding historical sites, promoting cultural diversity, and ensuring that urban development respects the identity and history of communities.
+
+8. Participation in Urban Planning:
+Encouraging community participation in urban planning processes is a key principle. SDG 11 emphasizes the importance of involving local communities in decision-making regarding urban development, ensuring that their needs and perspectives are taken into account.
+
+9. Global Partnership:
+   Achieving sustainable cities and communities requires collaboration and partnerships at the local, national, and global levels. SDG 11 calls for increased international cooperation, knowledge-sharing, and support to help cities implement sustainable practices.
+
+10. Monitoring and Indicators:
+To track progress, SDG 11 includes a set of indicators that measure various aspects of sustainable urban development. These indicators help countries assess their performance and make informed decisions to achieve the targets of the goal.
+
+Overall, SDG 11 envisions a future where cities are hubs of innovation, inclusivity, and sustainability. By addressing the complex challenges of urbanization, this goal aims to create environments that enhance the quality of life for current and future generations while safeguarding the planet's resources.
+
+<h2 align="center">Secondary SDG</h2>
+<br>
+<div style="text-align:center">
+<img src="img/final_project_draft/secondary sdg.png" width="200" height="200">
 </div>
 <br>
-<br>
-<br>
 
-<h1>DIFFERENT POSITIONS USED TO PUT THE BRACELETS ON THE BABY’S BODY</h1>
-<br>
+SDG 3, or the third Sustainable Development Goal of the United Nations, focuses on "Good Health and Well-being." It aims to ensure healthy lives and promote well-being for all by 2030. Key targets include reducing maternal mortality, preventing deaths of newborns and children, ending epidemics like AIDS and malaria, addressing non-communicable diseases, promoting mental health, and achieving universal health coverage. 
+The goal emphasizes collaboration to create a healthier world. It address various aspects of health, well-being, and healthcare systems to promote a healthier world by the year 2030. Governments, organizations, and individuals are encouraged to work collaboratively to achieve the objectives outlined in SDG 3.
 
-<table>
-  <tr>
-    <td><img src="img/final_project_draft/position1.jpeg" alt="Image 1"></td>
-    <td><img src="img/final_project_draft/position2.png" alt="Image 2"></td>
-    <td><img src="img/final_project_draft/position3.jpeg" alt="Image 3"></td>
-  </tr>
-</table>
+<h2>HOW WASTE SEGREGATION CONTRIBUTES TO SDG 11 & SDG 3: </h2>
+
+- <b>Reduces landfill waste:</b> Proper waste segregation diverts waste from landfills, extending their lifespan and reducing land pollution. This image shows a graph of decreasing landfill waste over time due to increased waste segregation.
+
+- <b>Improves air quality:</b> Burning unsorted waste releases harmful pollutants into the air. By separating organic waste that can be composted, we can reduce air pollution and improve public health.
+
+- <b>Promotes resource conservation:</b> Recycling materials like paper, plastic, and metal reduces the need to extract virgin resources, protecting natural habitats and conserving resources.
+
+- <b>Creates jobs:</b> The recycling industry creates jobs in various sectors, including collection, sorting, processing, and manufacturing.
+
+- <b>Boosts local economies:</b> By diverting waste from landfills and creating jobs in the recycling industry, waste segregation contributes to economic growth and development.
+
+- <b>Empowers communities:</b> When communities are involved in waste segregation programs, they become more invested in environmental sustainability and take ownership of their waste management practices.
+
+- Good health for the people:</b> with clean surroundings comes good health. Hence when the waste segregation process is done well , please have clean air and and a sanitary environment around them.
+
+### INNOVATION
+
+The innovative aspects of the waste separator bin include:
+
+- <b>Groundbreaking Solution:</b>
+Acts as a pioneering waste management solution, suggesting a departure from traditional methods.
+
+- <b>Advanced Sensor Technology:</b>
+Utilizes advanced sensors and algorithms, showcasing a cutting-edge approach to garbage sorting.
+
+- <b>Efficient Space Utilization:</b>
+Reduces the need for multiple bins by incorporating separate chambers for different waste materials, optimizing space and resources.
+
+- <b>Automated Sorting Process:</b>
+Saves time and effort by automatically sorting items such as plastic bags and metal items, introducing efficiency to waste disposal.
+
+- <b>Aesthetic Design:</b>
+Enhances the overall aesthetics with a modern and stylish design, making it visually appealing and seamlessly integrating into various environments.
+
+- <b>User-Friendly Interaction:</b>
+Features a hand motion sensor for automatic lid opening upon approach, providing a user-friendly and hygienic experience.
+
+- <b>Smart Alerts System:</b>
+Alerts users when chambers are full and need emptying, introducing a proactive element to waste management, optimizing the collection process.
+
+### Market Analysis
+
+- <b>Target Market:</b>
+The primary target market for this smart waste separator bin would include municipalities, waste management companies, public institutions, and potentially private organizations interested in sustainable waste management solutions. Specifically, regions facing waste management challenges, especially in African areas, could greatly benefit from such technology.
+
+<h2>Market Potential:</h2>
+
+- <b>Environmental Concerns:</b> Growing environmental awareness and the need for sustainable waste management practices globally create a strong market for innovative solutions like this smart bin.
+
+- <b>Urban Areas:</b> Given the focus on SDG 11 (Sustainable Cities and Communities), urban areas experiencing rapid growth and struggling with waste management could be prime markets.
+Government Initiatives: Governments striving to meet sustainability goals, especially in emerging economies, might be inclined to invest in such technology.
+
+- <b>Competitive Landscape:</b>
+There might be a few competitors offering variations of smart waste management solutions, but the unique aspects of this bin, such as its sensor technology, automated sorting, and aesthetics, can provide a competitive edge.
+
+<h2>Challenges: </h2>
+
+- <b>Adoption:</b> Convincing traditional waste management systems to adopt new technology might be challenging due to initial investment costs and operational changes.
+- <b>Education:</b> Educating users on how to utilize and maintain these bins correctly, as well as training waste management personnel, could be a hurdle.
+- <b>Maintenance:</b> Ensuring these bins are durable and have low maintenance requirements would be crucial for long-term success.
 
 
 
+### PROJECT DETAILS
 
 
-### PROJECT PLAN ****************************************************************************************
+- Automated sorting of various types of garbage (plastic bags, metal cans, plastic bottles, paper)
+- Hands-free operation with a hand motion sensor for automatic opening of the trash bin cover
+- Alarm system notifies when any of the trash chambers reach full capacity
 
-- Modify the existing baby smart body temperature bracelet as a develop a unique smart infant temperature monitoring bracelet that continuously monitors a baby's body temperature and provides real-time alerts to parents and caregivers when abnormalities are detected.
-- Think of rural areas with less technology.
-- Make the manufacture cost effective.
-- Lullaby music for the baby's relaxation.
--->
+### KEY TECH ANALYSIS
+
+<b>ELEMENTS USED:</b>
+
+- Arduino UNO.
+- Servo Motor.(SG90)
+- Inductive Proximity Sensor.
+- Capacitive Proximity Sensor.
+- Battery 9~12V.
+- Trash bin.
+- Trash Bin Cover.
+
+<b>Project Overview:</b>
+
+- Utilizes two types of sensors: capacitive and metal proximity.
+- Sensors designed to work in any environment and detect the presence of objects.
+- Optional inclusion of an IR distance sensor for measuring trash volume (can be omitted).
+- Requires two metal proximity sensors and one capacitive sensor.
+
+<h2>Algorithm:</h2>
+
+- <b>Metal Sensor Check:</b>
+When an object passes through a metal sensor, it detects the presence of metal.
+If metal is detected, the metal trash bin door opens automatically.
+
+- <b>Metal and Conductive Sensor Check:</b>
+The object then passes through both a metal sensor and a conductive sensor.
+The conductive trash bin door opens only if the object is conductive but not metal.
+
+- <b>No Sensor Triggered:</b>
+If neither metal nor conductive sensors are triggered, the object is identified as neither metal nor conductive.In this case, the trash bin doors remain closed.
+
+The algorithm ensures an efficient sorting process, opening the appropriate bin doors based on the detected characteristics of the passing object.
+
+### MATERIALS USED and HOW to make it.
+
+Loading .  
+Loading . .  
+Loading . . .  
+
+
+
