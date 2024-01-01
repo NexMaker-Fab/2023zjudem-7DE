@@ -341,3 +341,158 @@ void loop()
 
 <b>Conclusion</b>- The "IR Remote-Controlled LED Panel" project demonstrates how to use an IR remote to control LEDs connected to an Arduino. It showcases the functionality of IR receivers and how they can be integrated into projects for remote control applications. With modifications, it can be expanded to control more devices or perform diverse actions based on different IR signals received.
 <hr>
+
+
+### Matel Detector
+<h2 align="center">Matel Detector USING ARDUINO with inductive proximity sensor</h2>
+
+<b>Project Overview</b> -<br> The metal detector uses Arduino with an inductive proximity sensor and automated detection of metal physical contact. The system incorporates an Arduino Uno and an inductive proximity sensor. Servo motor and LED for indicating metal detection
+Connecting wires for connections and power supply options such as 9v batteries, a power bank, or a DC 9-volt power supply.
+<br>
+<br>
+<b>Key Components</b> -
+<br>
+<br>
+<b>Arduino UNO</b>: A microcontroller board that executes the provided code. The brain of the setup, executing the instructions to control the servo and LED.<br>
+
+<b>Inductive proximity sensor</b>: An inductive proximity sensor is a device that detects metal targets without physical contact. It uses electromagnetic energy to sense metal targets. The sensing range of an inductive proximity sensor depends on the type of metal being detected.<br>
+
+<b>Servo Motor</b>: A device that can rotate to a specific angle based on the signal it receives. In this code, it's named tap_servo and controls a tap or lever.<br>
+
+<b>LED (connected to pin 13 on Arduino, often the built-in LED)</b>: Light Emitting Diode, a small light. Connected to pin 13 on the Arduino board (referred to as led_pin), often the built-in LED.<br>
+
+<b>Jumper Wires</b>: Used for making electrical connections between components, linking the Arduino, Inductive proximity sensor, Servo Motor, and LED.<br>
+
+<b>Power Supply Options</b>: The project can be powered using 9v batteries, a power bank, or a DC 9v power supply, providing flexibility and convenience.
+<br>
+
+<b>Working Principle</b> -<br>
+The system acts as a simple interactive setup, where the position of 
+the servo and the state of the LED change based on the input from the sensor.
+It could be used to create a physical interaction or response to the presence of an object, 
+depending on the specific application.
+<br>
+
+<b>Applications</b> -<br> TProximity Detection:
+
+Use the sensor to detect the proximity of an object, triggering a response from the servo and LED. This could be applied in automated doors, where the door opens or closes based on the presence of a person.
+Interactive Displays:
+
+Create interactive displays where the servo and LED respond to user interactions. For example, in a museum exhibit, the system could respond to the presence of a viewer, providing additional information or activating a visual display.
+Security Systems:
+
+Employ the sensor to detect unauthorized access. The servo and LED could indicate whether someone is approaching a restricted area, providing a visual deterrent.
+Home Automation:
+
+Integrate the system into a home automation setup. For instance, use it to control a physical switch or tap based on the detection of a person in a room.
+Education and Demonstration:
+
+In educational settings, this system could be used to demonstrate basic concepts of sensor interaction and servo control. It provides a hands-on example for learning about input-output systems.
+Entertainment Props:
+
+Build interactive props for theatrical performances or escape rooms where the servo and LED enhance the overall experience by responding to specific cues or events.
+Training Simulators:
+
+Develop training simulators where the system responds to specific conditions, simulating real-world scenarios for training purposes. For instance, a simulator that responds to the placement of objects.
+Customized Gadgets:
+
+Create personalized gadgets or devices where the servo and LED serve a specific purpose, such as turning on a water tap, adjusting a camera position, or signaling a particular event.
+<br>
+
+<b>Components Photo</b> -
+<br>
+<br>
+<img src="img/arduino/metaldetect_component.jpeg">
+<br>
+<br>
+<b>SKETCH DIAGRAM</b> -
+<br>
+<br>
+<img src="img/arduino/metal_detect_diagram.jpeg">
+<br>
+<br>
+
+<b>Arduino Code</b> -
+
+~~~
+#include <Servo.h>
+
+Servo tap_servo;
+
+int sensor_pin = 5;
+int tap_servo_pin = 6;
+int led_pin = 13; // Assuming you are using the built-in LED on Arduino
+
+int val;
+
+void setup() {
+  pinMode(sensor_pin, INPUT);
+  pinMode(led_pin, OUTPUT);
+  
+  tap_servo.attach(tap_servo_pin);
+}
+
+void loop() {
+  val = digitalRead(sensor_pin);
+
+  if (val == 0) {
+    tap_servo.write(0);
+    digitalWrite(led_pin, LOW); // Turn off the LED when no object is detected
+  }
+  
+  if (val == 1) {
+    tap_servo.write(180);
+    digitalWrite(led_pin, HIGH); // Turn on the LED when an object is detected
+  }
+}
+
+~~~
+
+<b>Workflow</b> - 
+
+- Initialization:
+
+  - The Arduino board is powered up, initializing the system.
+  - Pin modes are set using pinMode() for the sensor input (sensor_pin) and the LED output (led_pin).
+  -The servo motor (tap_servo) is attached to its designated pin (tap_servo_pin).
+- Continuous Loop Execution:
+
+  -The Arduino enters the main loop, executing the loop() function continuously.
+- Sensor Reading:
+
+  -The digital input from the sensor is read using val = digitalRead(sensor_pin);.
+- Decision Making:
+
+  -If the sensor reads 0, indicating no object detected, the system responds:
+
+  - The servo motor (tap_servo) sets its angle to 0 using tap_servo.write(0);.
+  - The LED connected to pin 13 (led_pin) is turned off using digitalWrite(led_pin, LOW);.
+  - If the sensor reads 1, indicating an object is detected, the system responds:
+
+  - The servo motor (tap_servo) sets its angle to 180 using tap_servo.write(180);.
+  - The LED connected to pin 13 (led_pin) is turned on using digitalWrite(led_pin, HIGH);.
+- Servo and LED Control:
+
+  - The servo motor physically moves the tap or lever based on the detected condition.
+  - The LED provides a visual indication of the system state, either on or off.
+- Repeat:
+
+  -The loop continues, repeatedly reading the sensor input and adjusting the servo and LED states accordingly.
+- Flow Summary:
+
+- Initialization sets up the pins and attaches the servo motor.
+- The loop continually reads the sensor, making decisions based on the input.
+- The servo and LED respond to the sensor input, creating an interactive and dynamic system
+
+<b>Project Video</b> -
+<div id="video-container"> 
+    <video controls>
+            <source src="img/arduino/metaldetect_video.mp4" type="video/mp4">
+        </video>
+</div>
+
+<b>Conclusion</b> -<br>
+In conclusion, the described Arduino code and circuit design create a responsive system that integrates a sensor, servo motor, and LED to simulate a dynamic interaction. The system reads input from the sensor to determine the presence or absence of an object and responds by adjusting the position of a servo motor and the state of an LED.
+
+This versatile setup opens the door to various applications, ranging from proximity detection and security systems to interactive displays and educational demonstrations. The simplicity of the code and components makes it accessible for beginners in Arduino programming while offering opportunities for customization and expansion for more advanced users.
+<hr>

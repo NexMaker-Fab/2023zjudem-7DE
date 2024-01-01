@@ -26,7 +26,7 @@
 
 
 
-<h2>Materials Used:</h2>
+<h2>Materials for 3D printing:</h2>
 
 - Plastics: PLA, ABS, PETG are commonly used in FDM printers.
 - Resins: Used in SLA and DLP printers, offering high detail and smooth finishes.
@@ -51,13 +51,14 @@
 - Quality and Resolution: Surface finish and resolution might not match traditional manufacturing methods for some applications.
 
 ### 3D printing Practice
-<h2 align="center">Printing Practice</h2>
+<h2 align="center"> Printing Practice </h2>
 
-<a href="https://www.thingiverse.com/thing:3308710">Spring car</a> 3D print.
+<a href="https://www.thingiverse.com/thing:3308710"></a>
+<b>Assemblable Spring car 3D print.</b>
 
 <h2>Software</h2>
-<a href="https://www.autodesk.com/products/fusion-360/overview?cjdata=MXxOfDB8WXww&panel=buy&AID=10282382&PID=8206971&SID=jkp_Cj0KCQiAv8SsBhC7ARIsALIkVT3qGHm0MfeDTNButqbhhfXCpGNhrQ3DkJAAZ9ghhI9etShEd0kChe4aAj0FEALw_wcB&cjevent=9f5877e7a7bd11ee81ec7a050a1eba23&mktvar002=afc_us_deeplink&affname=8206971_10282382">Fusion 360</a>
-<br>
+<!--<a href="https://www.autodesk.com/products/fusion-360/overview?cjdata=MXxOfDB8WXww&panel=buy&AID=10282382&PID=8206971&SID=jkp_Cj0KCQiAv8SsBhC7ARIsALIkVT3qGHm0MfeDTNButqbhhfXCpGNhrQ3DkJAAZ9ghhI9etShEd0kChe4aAj0FEALw_wcB&cjevent=9f5877e7a7bd11ee81ec7a050a1eba23&mktvar002=afc_us_deeplink&affname=8206971_10282382">Fusion 360</a>
+<br> -->
 <a href="https://www.flashforge.com/product-detail/FlashPrint-slicer-for-flashforge-fdm-3d-printers">Flash Print 5</a> Slice software.
 
 ### Slice
@@ -224,7 +225,73 @@
 </video>
 <br>
 
-### G-code Reading
+
+### Solid Print
+<h2 align="center">COFFEE MUG</h2>
+
+> Import the .stl file in FlashPrint5.
+<br>
+
+<img src="img/3D/3dprint/coffemug_1.png">
+<br>
+
+> Move the design on plate and adjult the scale 
+<br>
+
+<img src="img/3D/3dprint/coffeemug_2.png">
+<br>
+
+>Set support
+<br>
+
+<img src="img/3D/3dprint/coffeemug_3.png">
+<br>
+
+> Now click start slicing
+<br>
+
+<img src="img/3D/3dprint/coffeemug_4.png">
+<br>
+
+>Set parameters
+<br>
+
+<img src="img/3D/3dprint/coffeemug_5.png">
+<br>
+
+> Now you can check the preview.you can check estimated time for printing.
+and estimated meterial needed for printing.
+so that you can check how much material
+you need for your printing and check 3D printer filament,
+and you can load or unload filament if you need it.
+<br>
+
+<img src="img/3D/3dprint/coffeemug_6.png">
+<br>
+
+>Printing and complete
+<br>
+
+<img src="img/3D/3dprint/coffeemug_7.png">
+<img src="img/3D/3dprint/coffeemug_8.png">
+<img src="img/3D/3dprint/coffeemug_9.png">
+<img src="img/3D/3dprint/coffeemug_10.png">
+<br>
+
+>Postprocess
+<br>
+
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/3D/3dprint/coffeemug_postprocess.mp4" type="video/mp4">
+</video>
+<br>
+
+> Final prodecut
+<br>
+
+<img src="img/3D/3dprint/coffeemug_final.png">
+
+
 
 ### New Research and Application of 3D printing
 
@@ -243,3 +310,5 @@ Drug Testing and Disease Models: 3D-printed tissues and organs are being used as
 Reference for new research : <a href="https://www.sciencedirect.com/science/article/abs/pii/S0169409X18301509">Sciencedirect</a>
 <br>
 <br>
+
+
