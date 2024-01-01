@@ -291,6 +291,45 @@ and you can load or unload filament if you need it.
 
 <img src="img/3D/3dprint/coffeemug_final.png">
 
+### G-Code
+
+G-Code
+
+523512 ;end code
+523513 M104 S0 T0
+523514 M140 S0 T0
+523515 G162 Z F1800
+523516 G28 X Y
+523517 M132 X Y A B
+523518 M652
+523519 G91
+523520 M18
+
+523512 ;end code: This is a comment line. Comments in G-code start with a semicolon (;) and are ignored by the machine. It's simply a note for human readers and does not affect the printing process.
+
+
+523513 M104 S0 T0: This line sets the temperature of the extruder (T0) to 0 degrees Celsius (S0). The M104 command is commonly used to set and control the temperature of the hot-end (extruder) in 3D printing.
+
+
+523514 M140 S0 T0: Similar to the previous line, this sets the bed temperature (T0) to 0 degrees Celsius (S0). The M140 command is often used for controlling the bed temperature in 3D printing.
+
+
+523515 G162 Z F1800: This line executes a homing move for the Z-axis using G162. The F1800 specifies the feed rate (speed) at which the Z-axis is homed, which is 1800 mm per minute.
+
+
+523516 G28 X Y: This line homes the X and Y axes. G28 is the G-code command for homing, and specifying X and Y means homing the X and Y axes.
+
+
+523517 M132 X Y A B: This line recalls parameters for axis offsets from memory. It's often used to restore the machine's position after a power loss or other interruption.
+
+
+523518 M652: This command is not standard G-code and is likely specific to the firmware or machine you are using. It may be a custom command recognized by the firmware or controller of your 3D printer.
+
+
+523519 G91: This sets the machine to incremental positioning mode. In this mode, coordinates are interpreted as relative distances from the current position rather than absolute coordinates.
+
+
+523520 M18: This command initiates a machine disable or power off. It essentially turns off the motors, disabling the movement of the printer. This is often used at the end of a print to power down the machine.
 
 
 ### New Research and Application of 3D printing
