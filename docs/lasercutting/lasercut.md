@@ -7,46 +7,30 @@ Laser cutting technology has advanced significantly, enabling the processing of 
 
 From modest machines costing under $100 to larger ones capable of cutting steel up to 100 mm thick at speeds of 100 mm/s, the range of laser cutters available is diverse. These lower-cost machines excel at cutting thin sheets and engraving on a wide variety of materials, while the larger machines tackle heavier tasks with precision.
 
-Despite the improved capability of laser cutters, there are still good and bad materials for laser cutting, for example: acrylic, plywood, and MDF. Listed below are the most common laser cutting materials:
+Despite the improved capability of laser cutters, there are still good and bad materials for laser cutting, for example: acrylic, plywood, and MDF. Listed below are the most common laser cutting materials -
 
-- <b>Acrylic</b>
+- <b><a href="https://www.elecrow.com/blog/acrylic-laser-cutting-all-you-need-to-know.html">Acrylic</a></b>
+<div style="text-align:center">
+<img src="img/lasercut/acrylic_meta.jpeg" width="100%" height="30%">
+</div>
+<br>
 Known for its exceptional strength, optical clarity, and rigidity, acrylic (PMMA) stands out as a transparent plastic material. There are two variants: cast and extruded. The extruded sheet, although tougher to cut due to residual stresses causing stress cracking, yields better-looking edges at slower cutting speeds. Adequate ventilation is essential during the laser cutting of acrylic due to ignition risk and the toxicity of the resulting vapor.
 For cutting acrylic, CO2 or diode-pumped lasers are recommended, emphasizing the use of lower power to avoid scorching. Optimal results occur with an 80 W laser cutting 8 mm acrylic at approximately 5 mm/s, delivering high-quality edges with minimal heat-affected zones (HAZ). Setting the blower to a pressure akin to the strength of blowing on one's finger facilitates proper setup.
 
-- <b>Plywood</b>
+- <b><a href="https://www.spp.co.uk/thin-laser-plywood">Plywood</a></b>
+<div style="text-align:center">
+<img src="img/lasercut/plywood_meta.png" width="100%" height="30%">
+</div>
+<br>
 Derived from bonded wood veneers, plywood, although available in various forms, is universally laser-cuttable. However, the resin bonding emits toxic gases when heated, necessitating ventilation during cutting.
 Plywood demands high power and swift speeds during multiple cuts, potentially resulting in an increased kerf size. Enhanced blower pressure facilitates cleaner cutting and supports higher feed rates. CO2 and fiber lasers are the recommended types for plywood cutting.
 
-- <b>MDF</b>
-Medium Density Fiberboard (MDF), an engineered material comprising wood residuals, presents challenges due to its density and high adhesive content. Its slow cutting nature and susceptibility to staining and soot marking make it a tough material for laser cutting. CO2 or diode-pumped lasers suit MDF cutting.
-Cutting MDF necessitates maximum available power, with an 80 W laser cutting 10 mm MDF at around 3.5 mm/s, resulting in scorched and stained edges. Adequate blower pressure clears burned residue, ensuring unhindered laser passage and preventing soot deposition on optics.
-
 - <b>Cardboard</b>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uxBf-w9LMEo?si=vcmeMIulPb0ypHG1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 A widely used material for packaging and modeling, cardboard, despite generating low combustion products and displaying minimal toxicity, benefits from maintained ventilation during laser cutting. Moderate power levels and rapid feed speeds are recommended for cardboard. Controlled blower pressure enhances cut quality while limiting kerfing and heat-affected zones (HAZ).
 
-- <b>POM</b>
-Recognized for its strength and chemical resistance, POM (PolyOxyMethylene) requires ventilation during laser cutting due to the high toxicity of scorched plastic. CO2 lasers, similar to those used for acrylic, provide optimal results. Utilizing lower power levels and moderate blower pressure while cutting POM enhances efficiency and safety.
 
-- <b>Foam</b>
-Referring to materials trapping gas in a liquid or solid, foam includes cuttable varieties like expanded polystyrene and Depron modeling foam. Laser cutting foam demands low power, high feed rates, and adequate ventilation due to the emission of toxic gases.
 
-- <b>Metal</b>
-Metal cutting with lasers, reserved for materials thicker than foil, employs reactive and fusion cutting techniques. Oxygen jet-assisted reactive cutting or nitrogen and argon-assisted fusion cutting suit different metals, offering low toxicity and minimal gas production.
-
-- <b>Leather</b>
-CO2 lasers efficiently cut leather, offering clean cuts without fiber damage. Modest laser power, potentially requiring multiple passes, ensures precision without causing stress distortion.
-
-- <b>Plastic</b>
-Different plastic types, including polyimide and polyester, respond well to laser cutting with varied laser types, each demanding unique settings and precautions due to the release of toxic gases.
-
-- <b>Cork</b>
-For cutting cork, lower power and higher feed speeds cater to thinner sections, while thicker mats necessitate multiple passes and controlled blower pressure to ensure precise cutting without displacement.
-
-- <b>Textiles</b>
-Natural textiles like cotton respond favorably to laser cutting with low to moderate power settings and high feed rates, while synthetic fabrics require stable settings to avoid potential fire hazards.
-
-- <b>Paper</b>
-Laser cutting paper demands low power and high feed speeds for swift, clean cuts without noticeable heat-affected zones (HAZ). Small laser-cutting machines are well-suited for paper cutting tasks.
 
 ### Design Rules and Kerf 
 Designing for laser cutting involves considering specific rules to ensure accurate and precise results. Additionally, understanding the concept of kerf is crucial in laser cutting design. Here are the design rules and an explanation of kerf:
@@ -101,6 +85,11 @@ We use LaserCAD software to design 2D model.
 
 <img src="img/lasercut/lasercut_3.jpeg">
 <br>
+
+> Make  sure turn on the power for smoke exhaust fan.
+<br>
+
+<img src="img/lasercut/lasercut_smoke_adjust.jpeg">
 
 >To adjust laser nozzle use these button
 <br>
@@ -160,8 +149,13 @@ so the kerf is kerf= (50-46.75)/10=0.325 mm.
 
 ### Assemble laser cut
 
+>Design
+<br>
+
+<img src="img/lasercut/lasercut_assemble_design.png">
+
 <video align="centre" width="100%" height="100%" controls muted>
-  <source src="img/lasercut/ass_laser.mp4" type="video/mp4">
+  <source src="img/lasercut/lasercut_assemble.mp4" type="video/mp4">
 </video>
 <br>
 
@@ -171,11 +165,17 @@ We have done one arduino project in arduino section called <a href="https://nexm
 
 We can control the light of different wall of the above assembled laser cutted box.
 
-<img src="img/lasercut/arduinowithlasercut.jpeg">
+<img src="img/lasercut/lasercut_witharduino.jpeg">
 <br>
-
+<br>
 <video align="centre" width="100%" height="100%" controls muted>
-  <source src="img/lasercut/arduinowithlaser.mp4" type="video/mp4">
+  <source src="img/lasercut/lasecut_witharduino_video.mp4" type="video/mp4">
+</video>
+<br>
+<br>
+<br>
+<video align="centre" width="100%" height="100%" controls muted>
+  <source src="img/lasercut/lasercut_arduino_video.mp4" type="video/mp4">
 </video>
 <br>
 
