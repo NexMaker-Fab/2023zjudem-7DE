@@ -53,8 +53,8 @@
 ### 3D printing Practice
 <h2 align="center"> Printing Practice </h2>
 
-<a href="https://www.thingiverse.com/thing:3308710"></a>
-<b>Assemblable Spring car 3D print.</b>
+<a href="https://www.thingiverse.com/thing:3308710">
+<b>Assemblable Spring car 3D print.</b></a>
 
 <h2>Software</h2>
 <!--<a href="https://www.autodesk.com/products/fusion-360/overview?cjdata=MXxOfDB8WXww&panel=buy&AID=10282382&PID=8206971&SID=jkp_Cj0KCQiAv8SsBhC7ARIsALIkVT3qGHm0MfeDTNButqbhhfXCpGNhrQ3DkJAAZ9ghhI9etShEd0kChe4aAj0FEALw_wcB&cjevent=9f5877e7a7bd11ee81ec7a050a1eba23&mktvar002=afc_us_deeplink&affname=8206971_10282382">Fusion 360</a>
@@ -94,6 +94,18 @@
 <br>
 
 ### Parameter setting in slice software
+
+| Parameter name | Parameter |
+| -------- | -------- |
+| Machine type | Guider 2 S series |
+| Nozzle Size | 0.4 mm |
+| Material | Flashforge-ABS (1.75 mm) |
+| Extruder temp. | 225'C |
+| Platform temp. | 100'C |
+| Shell Count | 2 |
+| Infill | 3 |
+| Raft | Not enable |
+
 
 > Printer parameter
 <br>
