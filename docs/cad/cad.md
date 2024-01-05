@@ -68,7 +68,7 @@ To install click <a href="https://www.autodesk.com/products/fusion-360/overview?
 <br>
 
 ### Engineering drawing of slider Crank Machanism
-<img src="img/360/eng_drawing_new.png">
+<img src="img/360/eng_drawing.png">
 
 
 

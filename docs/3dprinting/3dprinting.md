@@ -305,43 +305,27 @@ and you can load or unload filament if you need it.
 
 ### G-Code
 
-G-Code
+<img src="img/3D/3dprint/g-code-xl.png">
 
-523512 ;end code
-523513 M104 S0 T0
-523514 M140 S0 T0
-523515 G162 Z F1800
-523516 G28 X Y
-523517 M132 X Y A B
-523518 M652
-523519 G91
-523520 M18
+<h2>What is G-code. <a href="https://www.3dnatives.com/en/g-code-use-3d-printing-230920216/#!">Rerenfence</a></h2>
+<br>
 
-523512 ;end code: This is a comment line. Comments in G-code start with a semicolon (;) and are ignored by the machine. It's simply a note for human readers and does not affect the printing process.
+<img src="img/3D/3dprint/g-code-explain.png">
 
+First we must understand the difference between a G-Code and an M-Code. Both are commands included in the file and tell the printer how and where to extrude the material. The only difference is that G-Codes are universally understood by printers using G-Codes, and M-Codes are those codes that are specific to individual printer lines. So, as we can see in the picture below, the language is made up of several parameters. The basic things to know when reading such a code are the different alphanumeric values.
 
-523513 M104 S0 T0: This line sets the temperature of the extruder (T0) to 0 degrees Celsius (S0). The M104 command is commonly used to set and control the temperature of the hot-end (extruder) in 3D printing.
+The letters X / Y / Z refer to the three axes of the 3D printer that mark the coordinates. Any value of X above 0 moves the printhead to the right, any value of Y above 0 moves the printhead backwards, and any value of Z above 0 moves the printhead upwards. On the other hand, the letter F is understood as the speed at which the nozzle moves (indicated in mm/minute), while the letter E refers to the length of the movement (indicated in millimeters). Sometimes we can find text followed by the symbol “;” which serves to provide command information; these comments are not part of the code. Having understood how G-Codes can be read, let’s see which are the most common for the manufacture of a part.
 
+The <b>G1</b> command is the most basic of all, in fact, it will make up 95% of the total file. It is a code that instructs the 3D printer to perform a linear motion while depositing material to the specified location at the coordinates that are given to it. So, when we read the code “G1 X10 Y20 F1200” we will be instructing the printer to move to the X=10mm Y=20mm position in the tray at a slower speed of 1200 mm/min. Unlike this command, the G0 has the same principle of movement, but without extruding material through the nozzle.
 
-523514 M140 S0 T0: Similar to the previous line, this sets the bed temperature (T0) to 0 degrees Celsius (S0). The M140 command is often used for controlling the bed temperature in 3D printing.
+<b>G28.</b> This command is used for the machine to execute the start sequence, which will move the printhead to the far edges of the machine until it makes contact with the stops. If no axis is specified, the machine will automatically move all three, but you can always add X, Y, Z to the command. This is a useful way to quickly move an axis out of the way, especially when finishing the print.
 
+<b>G92.</b> Instructs the printer to set the current position of its axes. This can be useful if you want to change or offset the location of one of the axes. This is usually done at the beginning of each layer or just before a main or retract command.
 
-523515 G162 Z F1800: This line executes a homing move for the Z-axis using G162. The F1800 specifies the feed rate (speed) at which the Z-axis is homed, which is 1800 mm per minute.
+<b>M104.</b> This code is used to heat an extruder, and you must indicate which one (in case you have a double extrusion 3D printer), as well as the desired temperature. Thus, the command “M104 S200 T0” will order the machine to heat the extruder T0 (in the case of double extrusion, we would have T0 and T1) to a temperature of 200 degrees Celsius, indicated with the letter “S”. The other version of this G-Code, namely M109, will instruct the printer to wait for the extruder to reach the temperature before continuing with any other command.
 
+M140 and M190. They are very similar to those already mentioned, except that in this case it does not refer to the extruder, but to the printing bed. In this case the letter “T” indicating the extruder to be heated is omitted.
 
-523516 G28 X Y: This line homes the X and Y axes. G28 is the G-code command for homing, and specifying X and Y means homing the X and Y axes.
-
-
-523517 M132 X Y A B: This line recalls parameters for axis offsets from memory. It's often used to restore the machine's position after a power loss or other interruption.
-
-
-523518 M652: This command is not standard G-code and is likely specific to the firmware or machine you are using. It may be a custom command recognized by the firmware or controller of your 3D printer.
-
-
-523519 G91: This sets the machine to incremental positioning mode. In this mode, coordinates are interpreted as relative distances from the current position rather than absolute coordinates.
-
-
-523520 M18: This command initiates a machine disable or power off. It essentially turns off the motors, disabling the movement of the printer. This is often used at the end of a print to power down the machine.
 
 
 ### New Research and Application of 3D printing

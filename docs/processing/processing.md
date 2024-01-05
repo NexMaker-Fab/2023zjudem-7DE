@@ -196,9 +196,12 @@ The system utilizes an ultrasonic sensor to measure distances and a servo motor 
 - Arduino UNO<br>
 - SG90 Micro-servo motor<br>
 - Ultrasonic Sensor - HC-SR04 <br>
+- Buzzer
 - LED
 - Breadboard <br>
 - Jumper wires <br>
+
+<img src="img/processing/radarcomponent.jpeg">
 
 <h3>Software : </h3> <br>
 <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and <a href="https://processing.org/download/">Processing</a>
@@ -454,7 +457,7 @@ Integration:
   - Calculates the distance at different angles and sends this information serially to the connected computer.
   - Provides feedback through LED and buzzer based on detected object proximity within the specified range.
 
- <img src="img/processing/processingwitharduino.jpeg">
+ <img src="img/processing/radarassemble.png">
  <br>
 
 Project video :
