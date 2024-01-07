@@ -6,6 +6,7 @@
    - [4. Laser Cutting](lasercutting/lasercut.md)
    - [5. Arduino](arduino/arduino.md)
    - [6. Interface application programming](processing/processing.md)
+   - [7. IOT](iot/iot.md)
 
 - Final Project
   - [Final project](FinalProject/FinalProject.md) 
