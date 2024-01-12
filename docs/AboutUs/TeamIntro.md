@@ -57,7 +57,7 @@
                             <img src="img/tm_logo/nancy.jpeg">
                         </div>
                         <div class="team-content">
-                            <h3 class="title">Gazika Nancy</h3>
+                            <h3 class="title">Gakiza Nancy</h3>
 
 
 [Contact](https://nanagak.github.io/Nanagaki.github.io/)
