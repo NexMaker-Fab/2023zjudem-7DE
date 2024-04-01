@@ -4,19 +4,21 @@
 
 ### PURPOSE OF THE PROJECT
 
-To design a smart waste separator bin that would help contribute to alleviating the waste in many African areas and ensuring a proper channel of waste disposal and reuse/ recycling of waste without causing further harm to the environment. Many waste items such as plastic and metal can be reused or repurposed if they are separated from the rest of the garbage. However, manual sorting of waste is tedious, time-consuming, and inefficient. That is why we have developed an Arduino-based trash separation project that can automatically sort plastic and metal waste using sensors and actuators. Moreover, our project can also detect when the trash bin is full and alert the user or the waste management service. 
+One of the most significant environmental concerns we face today is the correct disposal and recycling of waste products. Many trash goods, such as plastic and metal, may be reused or repurposed if kept distinct from other debris. However, manual garbage sorting is unpleasant, time-consuming, and inefficient. That is why we created an Arduino-based garbage separation project that sorts plastic and metal debris using sensors and actuators. Furthermore, our solution can detect when the garbage bin is full and notify the user or a waste management provider. In this paper, we will detail the Arduino trash separation project's design, implementation, and testing, as well as its potential benefits and limits.
 
 
 <h2>Project goal</h2>
 
-- The waste separator bin;
-- Act as a groundbreaking waste management solution
-- Simplifies garbage sorting with advanced sensors and algorithms
-- Reduces the need for multiple bins by incorporating separate chambers for different waste materials
-- Saves time and effort by automatically sorting items like plastic bags, metal items
-- Enhances aesthetics with a modern and stylish design
-- Features a hand motion sensor for automatic lid opening upon approach
-- Alerts users when chambers are full and need emptying
+- [x] The waste separator bin.
+
+- [x] Act as a groundbreaking waste management solution.
+
+- [x] Simplifies garbage sorting with advanced sensors and algorithms.
+- [x] Reduces the need for multiple bins by incorporating separate chambers for different waste materials.
+- [x] Saves time and effort by automatically sorting items like plastic bags, metal items.
+- [ ] Enhances aesthetics with a modern and stylish design.
+- [ ] Features a hand motion sensor for automatic lid opening upon approach.
+- [ ] Alerts users when chambers are full and need emptying.
 
 ### TARGETED SDGs
 
@@ -140,26 +142,24 @@ There might be a few competitors offering variations of smart waste management s
 
 - Automated sorting of various types of garbage (plastic bags, metal cans, plastic bottles, paper)
 - Hands-free operation with a hand motion sensor for automatic opening of the trash bin cover
-- Alarm system notifies when any of the trash chambers reach full capacity
 
 ### KEY TECH ANALYSIS
 
 <b>ELEMENTS USED:</b>
 
 - Arduino UNO.
-- Servo Motor.(SG90)
-- Inductive Proximity Sensor.
+- Servo Motor.(SG90) (2 piece)
 - Capacitive Proximity Sensor.
+- IR sensor
 - Battery 9~12V.
 - Trash bin.
 - Trash Bin Cover.
 
 <b>Project Overview:</b>
 
-- Utilizes two types of sensors: capacitive and metal proximity.
+- Utilizes two types of sensors: capacitive and IR sensor.
 - Sensors designed to work in any environment and detect the presence of objects.
-- Optional inclusion of an IR distance sensor for measuring trash volume (can be omitted).
-- Requires two metal proximity sensors and one capacitive sensor.
+- Requires one capacitive proximity sensor and one IR sensor.
 
 <h2>Algorithm:</h2>
 
@@ -168,19 +168,17 @@ When an object passes through a metal sensor, it detects the presence of metal.
 If metal is detected, the metal trash bin door opens automatically.
 
 - <b>Metal and Conductive Sensor Check:</b>
-The object then passes through both a metal sensor and a conductive sensor.
-The conductive trash bin door opens only if the object is conductive but not metal.
+The object then passes through both a metal sensor and IR sensor.The conductive trash bin door opens only if the object is conductive but not metal.
 
-- <b>No Sensor Triggered:</b>
-If neither metal nor conductive sensors are triggered, the object is identified as neither metal nor conductive.In this case, the trash bin doors remain closed.
 
 The algorithm ensures an efficient sorting process, opening the appropriate bin doors based on the detected characteristics of the passing object.
 
-### MATERIALS USED and HOW to make it.
+### MATERIALS USED
 
-Loading .  
-Loading . .  
-Loading . . .  
+We have printed our prototype by using 3D printer where used ABS Filament.
+
+### Design Details
+
 
 
 
